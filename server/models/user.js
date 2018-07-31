@@ -23,15 +23,12 @@ const UserSchema = new mongoose.Schema({
   },
   password: String,
   name: String,
-  selfSurvey: [surveySchema],
+  selfSurveys: [surveySchema],
   averageRating: {
       tag: {type: String}, //new object pushed with recalculated values 
       points: {type: Number} //Decimal??
     },
-    communitySurvey: [
-    {type: surveySchema,
-    default: surveySchema,}
-    ],
+    communitySurveys: [surveySchema],
   });
 
 
