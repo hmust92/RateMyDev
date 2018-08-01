@@ -19,6 +19,9 @@ import LogoutFunction from './containers/LogoutFunction.jsx';
 import SignUpPage from './containers/SignUpPage.jsx';
 import DashboardPage from './containers/DashboardPage.jsx';
 import Auth from './modules/Auth';
+import ProfilePage from './containers/ProfilePage.jsx';
+import Search from './containers/Search.jsx';
+
 
 // remove tap delay, essential for MaterialUI to work properly
 injectTapEventPlugin();
@@ -85,10 +88,15 @@ class Main extends Component {
               {this.state.authenticated ? (
                 <div className="top-bar-right">
                   <Link to="/dashboard">Dashboard</Link>
+                  <Link to="/about">About</Link>
+                  <Link to="/profile">Profile</Link>
+                  <Link to="/search">Search</Link>
                   <Link to="/logout">Log out</Link>
                 </div>
               ) : (
                 <div className="top-bar-right">
+                  <Link to="/about">About</Link>
+                  <Link to="/search">Search</Link>
                   <Link to="/login">Log in</Link>
                   <Link to="/signup">Sign up</Link>
                 </div>
@@ -101,6 +109,9 @@ class Main extends Component {
             <LoggedOutRoute path="/login" component={LoginPage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
             <LoggedOutRoute path="/signup" component={SignUpPage}/>
             <Route path="/logout" component={LogoutFunction}/>
+            <Route path="/search" component={Search}/>
+            <Route path="/profile" component={ProfilePage}/>
+
           </div>
 
         </Router>
