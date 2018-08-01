@@ -7,7 +7,7 @@
     "start": "node --use_strict index.js",
     "dev": "nodemon --use_strict index.js",
     "client": "cd client && npm start",
-    "start:dev": "concurrently \"nodemon --use_strict index.js'\" \"npm run client\""
+    "start:dev": "concurrently \"npm run dev\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
