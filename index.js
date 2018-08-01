@@ -34,12 +34,12 @@ app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./server/static/index.html"));
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 
 
 // Set Port, hosting services will look for process.env.PORT
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 3001));
 
 // start the server
 app.listen(app.get('port'), () => {
