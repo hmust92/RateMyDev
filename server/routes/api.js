@@ -39,6 +39,7 @@ router.post("/me/survey", (req, res) => {
 	.then((userInfo) => {
 		console.log(userInfo)
 		console.log(req.body)
+		console.log(req.user._id)
 
 
 		userInfo.selfSurveys = userInfo.selfSurveys.concat([req.body])
@@ -82,6 +83,36 @@ router.post("/me/survey", (req, res) => {
 
 // })
 
+
+// router.post("/users/:userId/surveys", (req, res) => {
+// 	console.log('post', req.body);
+
+// 	// db.findById(req.user._id, (err, user) => {
+
+// 	// 	console.log(user)
+// 	// 	console.log(req.body)
+
+
+// 	// 	user.selfSurveys = user.selfSurveys.concat([req.body])
+// 	// 	user.save()
+// 	// });
+
+// 	db.findById(req.params.userId)
+// 	.then((userInfo) => {
+// 		console.log(userInfo)
+// 		console.log(req.body)
+// 		console.log(req.user._id)
+
+
+// 		userInfo.communitySurveys = userInfo.communitySurveys.concat([{
+// 			...req.body,
+// 			userId: req.user._id 
+// 		}])
+// 		userInfo.save()
+// 	});
+
+	
+// })
 
 
 
