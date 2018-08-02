@@ -22,7 +22,7 @@ class AboutPage extends React.Component {
         <div className="row">
   <div className="column">
     <div className="card">
-      <img src="../../images/dkd.jpeg" alt="David" style={{width: '100%'}} />
+      <img src="../images/dkd.jpeg" alt="David" style={{width: '100%'}} />
       <div className="container">
         <h2>David Daniels</h2>
         <p className="title">UX Developer</p>
@@ -63,7 +63,7 @@ class AboutPage extends React.Component {
       <div className="container">
         <h2>Sherry Yang</h2>
         <p className="title">UI</p>
-        <p>Anticipates the obstacles. Offers an alternative view</p>
+        <p>Anticipates the obstacles. Offers an alternative view.</p>
         <p>sharebear31496@gmail.com</p>
         <p><button><a href="mailto:sharebear31496@gmail.com">Contact</a></button></p>
       </div>
