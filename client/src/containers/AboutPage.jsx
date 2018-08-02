@@ -23,7 +23,7 @@ class AboutPage extends React.Component {
       <div className="container">
         <h2>David Daniels</h2>
         <p className="title">UX Developer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>Has some ideas. Feels strongly about them. Likes to work.</p>
         <p>daviddaniels@gmail.com</p>
         <p><button className="button">Contact</button></p>
       </div>
@@ -35,7 +35,7 @@ class AboutPage extends React.Component {
       <div className="container">
         <h2>Paul Rose</h2>
         <p className="title">Full Stack Developer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>Thought deeply about how it all connects. Building things.</p>
         <p>example@example.com</p>
         <p><button className="button">Contact</button></p>
       </div>
@@ -47,7 +47,7 @@ class AboutPage extends React.Component {
       <div className="container">
         <h2>Hasan Mustafa</h2>
         <p className="title">Full Stack Developer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>Deep into the documentation, figuring out how the stuff works.</p>
         <p>example@example.com</p>
         <p><button className="button">Contact</button></p>
       </div>
@@ -59,7 +59,7 @@ class AboutPage extends React.Component {
       <div className="container">
         <h2>Sherry Yang</h2>
         <p className="title">UI</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>Anticipates the obstacles. Offers an alternative view</p>
         <p>example@example.com</p>
         <p><button className="button">Contact</button></p>
       </div>
@@ -70,8 +70,8 @@ class AboutPage extends React.Component {
       <img src="img1.jpg" alt="Jane" style={{width: '100%'}} />
       <div className="container">
         <h2>Elaulas Cristiano</h2>
-        <p className="title">Ideation, Gaurdrails</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p className="title">Subject Matter Expert (SME)</p>
+        <p>Brings a thoughtful perspective to the problem at hand.</p>
         <p>example@example.com</p>
         <p><button className="button">Contact</button></p>
       </div>
