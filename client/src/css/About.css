@@ -10,18 +10,15 @@ p {
 
 .intro {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background-color: rgb(224, 224, 224); 
+    background: #00d2ff; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #009ec1, #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #009ec1, #3a7bd5);
     margin: 10px;
     padding: 8px 8px 8px 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
 }
 
-body {
-    /* background-color: #160881;
-    background-image: url("https://www.publicdomainpictures.net/pictures/40000/velka/blue-abstract-background.jpg");
-     */
-}
 
 /* Three columns side by side */
 .column {
