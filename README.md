@@ -10,6 +10,9 @@ npm install
 npm run start:dev
 
 
+##Demo Day Slide Deck
+https://docs.google.com/presentation/d/16DpMm0F2r1e9zeb7bpkPtoatQkR7pW3gqDFWisIcy80/edit?usp=sharing
+
 # RateMyDev
 Project 3 
 
