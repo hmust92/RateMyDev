@@ -161,6 +161,6 @@ class Main extends Component {
 export default Main;
 
 
-// <li className="nav-item">
-//  <Link className="nav-link" to="/logout"><i className="fas fa-sign-out-alt"></i> Log Out</Link>
+//<li className="nav-item">
+ //<Link className="nav-link" to="/logout"><i className="fas fa-sign-out-alt"></i> Log Out</Link>
 // </li>

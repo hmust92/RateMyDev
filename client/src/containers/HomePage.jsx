@@ -19,7 +19,6 @@ import Search from "./Search.jsx";
 
 const HomePage = () => (
 
-<Router>  
   <div>
     <Hero backgroundImage="https://png.pngtree.com/thumb_back/fw800/back_pic/00/08/57/41562ad4a92b16a.jpg">
     {/* <Hero backgroundImage="https://media.giphy.com/media/ko7twHhomhk8E/giphy.gif"> */}
@@ -48,23 +47,16 @@ const HomePage = () => (
           
           </p>
 
-          <a href="/profile"><button>I'm a Developer</button></a>
-          <a href="/search"><button>I'm Hiring</button></a>
-
-
+          <Link to="/profile"><button>I'm a Developer</button></Link> 
+          <Link to="/search"><button>I'm Hiring</button></Link>
           
         </Col>
       </Row>
     </Container>
 
-    <Route path="/profile" component={ProfilePage}/>
-    <Route path="/search" component={Search}/>
-
-
+  
   </div>
 
-  
-</Router>  
 );
 
 export default HomePage;
@@ -72,3 +64,6 @@ export default HomePage;
 
 //<Link to="/profile"><button>I'm a Developer</button></Link> 
 //<Link to="/search"><button>I'm Hiring</button></Link>
+
+//<a href="/profile"><button>I'm a Developer</button></a>
+//<a href="/search"><button>I'm Hiring</button></a>

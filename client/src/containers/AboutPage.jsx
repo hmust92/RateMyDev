@@ -3,7 +3,6 @@ import Auth from '../modules/Auth';
 import '../css/About.css';
 //import Dashboard from '../components/Dashboard.jsx';
 
-
 class AboutPage extends React.Component {
   /**
    * Render the component.
@@ -22,7 +21,7 @@ class AboutPage extends React.Component {
         <div className="row">
   <div className="column">
     <div className="card">
-      <img src="../../images/dkd.jpeg" alt="David" style={{width: '100%'}} />
+      <img src="../../public/images/dkd.jpeg" alt="David" style={{width: '100%'}} />
       <div className="container">
         <h2>David Daniels</h2>
         <p className="title">UX Developer</p>

@@ -1,26 +1,27 @@
-import React from 'react';
 import Auth from '../modules/Auth';
 import Dashboard from '../components/Dashboard.jsx';
+import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
+import React, { Component } from "react";
 
 
-class ProfilePage extends React.Component {
+class ProfilePage extends Component {
 
-  /**
-   * Class constructor.
-   */
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      secretData: '',
-      user: {}
-    };
-  }
+
+  state = {
+    secretData: '',
+    user: {},
+    tag: "",
+    points: ""
+  };
+  
+
+
 
   /**
    * This method will be executed after initial rendering.
    */
-  componentDidMount() {
+   componentDidMount() {
     const xhr = new XMLHttpRequest();
     xhr.open('get', '/api/me');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -38,29 +39,68 @@ class ProfilePage extends React.Component {
     xhr.send();
   }
 
+  handleSkillChange = (event) => {
+    this.setState({ tag: event.target.value });
+  }
+
+  handlePointsChange = (event) => {
+    this.setState({ points: event.target.value });
+  }
+
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    // const userData = {
+    //   "tag": this.state.tag,
+    //   "points": this.state.points
+    // }
+
+    const tagYo = this.state.tag;
+    const pointsYo = this.state.points;
+    // const userData = `tag=${tagYo}&points=${pointsYo}`;
+
+    const userData = {
+      tag: tagYo,
+      points: pointsYo
+    }
+
+    // console.log({userData)
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/api/me/survey', true);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
+    xhr.responseType = 'json';
+    xhr.onreadystatechange = function() {//Call a function when the state changes.
+      if(this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        // Request finished. Do processing here.
+      }
+    }
+    // xhr.send(...userData);
+    xhr.send(JSON.stringify(userData));
+
+    
+  }
+
+
   /**
    * Render the component.
    */
-  render() {
-    //return (<Dashboard secretData={this.state.secretData} user={this.state.user} />);
-
+   render() {
     return (
       <div>
-        <Dashboard secretData={this.state.secretData} user={this.state.user} />;
+      <Dashboard secretData={this.state.secretData} user={this.state.user} />
+      <SelfSurveyForm
+      handleSkillChange={this.handleSkillChange}
+      handlePointsChange={this.handlePointsChange}
+      handleFormSubmit={this.handleFormSubmit} 
+      />
+      </div>
 
-        <h1>hello</h1>
-        <h1>hello</h1>
 
-        <h1>hello</h1>
-
-        <h1>hello</h1>
-        </div>
-    );
+      );
   }
 
 }
 
 export default ProfilePage;
-
-
-
