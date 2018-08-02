@@ -1,7 +1,27 @@
 h1 {
     text-align: center;
+    margin: 10px;
+    padding: 8px 8px 8px 8px;
 }
 
+p {
+    font-size: 1.25em;
+}
+
+.intro {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgb(224, 224, 224); 
+    margin: 10px;
+    padding: 8px 8px 8px 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+body {
+    /* background-color: #160881;
+    background-image: url("https://www.publicdomainpictures.net/pictures/40000/velka/blue-abstract-background.jpg");
+     */
+}
 
 /* Three columns side by side */
 .column {
@@ -22,6 +42,7 @@ h1 {
 /* Add some shadows to create a card effect */
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgb(224, 224, 224); 
 }
 
 /* Some left and right padding inside the container */

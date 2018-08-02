@@ -11,11 +11,12 @@ class AboutPage extends React.Component {
   render() {
     return (
       <div>
+        <div className="intro">
+          <h1>About</h1>
+            <p>HR managers don't really understand tech beyond the acronyms and the interview process between Devs who are strangers is arduous. Only Devs who have already worked with other Devs really know who can do what.</p>
+            <p>Rate My Dev is a React app that scores Developers on tech skills through defined criterias of skill compentency. Hiring managers or startups can contact developers with the closest match to their specific requirements based on skill location and mastery.</p>
+        </div>
 
-        <h1>About</h1>
-        <p>HR managers don't really understand tech beyond the acronyms and the interview process between Devs who are strangers is arduous. Only Devs who have already worked with other Devs really know who can do what.</p>
-        <p>Rate My Dev is a React app that scores Developers on tech skills through defined criterias of skill compentency. Hiring managers or startups can contact developers with the closest match to their specific requirements based on skill location and mastery.</p>
-        
         <h1>Meet the Team</h1>
 
         <div className="row">
