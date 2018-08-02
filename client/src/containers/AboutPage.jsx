@@ -33,7 +33,7 @@ class AboutPage extends React.Component {
   </div>
   <div className="column">
     <div className="card">
-      <img src="img2.jpg" alt="Paul" style={{width: '100%'}} />
+      <img src="paulrose.jpeg" alt="Paul" style={{width: '100%'}} />
       <div className="container">
         <h2>Paul Rose</h2>
         <p className="title">Full Stack Developer</p>
@@ -45,7 +45,7 @@ class AboutPage extends React.Component {
   </div>
   <div className="column">
     <div className="card">
-      <img src="img3.jpg" alt="Hasan" style={{width: '100%'}} />
+      <img src="hasanmustafa.jpeg" alt="Hasan" style={{width: '100%'}} />
       <div className="container">
         <h2>Hasan Mustafa</h2>
         <p className="title">Full Stack Developer</p>
@@ -58,7 +58,7 @@ class AboutPage extends React.Component {
   </div>
   <div className="column">
     <div className="card">
-      <img src="img1.jpg" alt="Sherry" style={{width: '100%'}} />
+      <img src="sherryyang.jpeg" alt="Sherry" style={{width: '100%'}} />
       <div className="container">
         <h2>Sherry Yang</h2>
         <p className="title">UI</p>
@@ -70,7 +70,7 @@ class AboutPage extends React.Component {
   </div>
   <div className="column">
     <div className="card">
-      <img src="img1.jpg" alt="Elaulas" style={{width: '100%'}} />
+      <img src="ec.jpeg" alt="Elaulas" style={{width: '100%'}} />
       <div className="container">
         <h2>Elaulas Cristiano</h2>
         <p className="title">Subject Matter Expert (SME)</p>
