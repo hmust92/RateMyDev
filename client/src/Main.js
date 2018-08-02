@@ -4,6 +4,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // import routes from './routes.js';
 
+import "./css/Main.css";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -23,6 +25,8 @@ import Auth from './modules/Auth';
 import ProfilePage from './containers/ProfilePage.jsx';
 import Search from './containers/Search.jsx';
 import Footer from './components/davidcomponents/Footer'
+import AboutPage from './containers/AboutPage.jsx';
+
 
 // remove tap delay, essential for MaterialUI to work properly
 injectTapEventPlugin();
@@ -109,7 +113,7 @@ class Main extends Component {
                       <Link className="nav-link" to="/search"><i className="fas fa-users"></i> Search</Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/logout"><i className="fas fa-sign-out-alt"></i> Log Out</Link>
+                      <a className="nav-link" href="/logout"><i className="fas fa-sign-out-alt"></i> Log Out</a>
                     </li>
                   </ul>
                 ) : (
@@ -138,6 +142,7 @@ class Main extends Component {
               <PrivateRoute path="/dashboard" component={DashboardPage}/>
               <LoggedOutRoute path="/login" component={LoginPage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
               <LoggedOutRoute path="/signup" component={SignUpPage}/>
+              <Route path="/about" component={AboutPage}/>
               <Route path="/logout" component={LogoutFunction}/>
               <Route path="/search" component={Search}/>
               <PrivateRoute path="/profile" component={ProfilePage}/>
@@ -154,3 +159,8 @@ class Main extends Component {
 }
 
 export default Main;
+
+
+// <li className="nav-item">
+//  <Link className="nav-link" to="/logout"><i className="fas fa-sign-out-alt"></i> Log Out</Link>
+// </li>

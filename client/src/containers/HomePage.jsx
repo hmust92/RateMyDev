@@ -3,7 +3,7 @@ import Hero from "../components/davidcomponents/Hero";
 import Container from "../components/davidcomponents/Container";
 import Row from "../components/davidcomponents/Row";
 import Col from "../components/davidcomponents/Col";
-import '../Main.css';
+import '../css/HomePage.css';
 
 import {
     BrowserRouter as Router,
@@ -47,8 +47,11 @@ const HomePage = () => (
           <p>
           
           </p>
-          <Link to="/profile"><button>I'm a Developer</button></Link> 
-          <Link to="/search"><button>I'm Hiring</button></Link>
+
+          <a href="/profile"><button>I'm a Developer</button></a>
+          <a href="/search"><button>I'm Hiring</button></a>
+
+
           
         </Col>
       </Row>
@@ -65,3 +68,7 @@ const HomePage = () => (
 );
 
 export default HomePage;
+
+
+//<Link to="/profile"><button>I'm a Developer</button></Link> 
+//<Link to="/search"><button>I'm Hiring</button></Link>
