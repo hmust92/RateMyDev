@@ -45,16 +45,17 @@ const HomePage = () => (
 
           </p>
           <p>
-
-          <Link to="/profile" > <button>I'm a Developer</button></Link> 
-          <Link to="/search" > <button>I'm Hiring</button></Link>
           
           </p>
+          <Link to="/profile"><button>I'm a Developer</button></Link> 
+          <Link to="/search"><button>I'm Hiring</button></Link>
           
         </Col>
       </Row>
     </Container>
 
+    <Route path="/profile" component={ProfilePage}/>
+    <Route path="/search" component={Search}/>
 
 
   </div>

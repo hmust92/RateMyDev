@@ -78,6 +78,10 @@ class Main extends Component {
     this.setState({ authenticated: Auth.isUserAuthenticated() })
   }
 
+  // logoutNow () {
+  //   Auth.deauthenticateUser();
+  // }
+
   render() {
     return (
       <div>
@@ -105,7 +109,7 @@ class Main extends Component {
                       <Link className="nav-link" to="/search"><i className="fas fa-users"></i> Search</Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/logout"><i className="fas fa-sign-out-alt"></i> Log out</Link>
+                      <Link className="nav-link" to="/logout"><i className="fas fa-sign-out-alt"></i> Log Out</Link>
                     </li>
                   </ul>
                 ) : (
@@ -117,7 +121,10 @@ class Main extends Component {
                       <Link className="nav-link" to="/about"><i className="far fa-question-circle"></i> About</Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/login"><i className="fas fa-sign-in-alt"></i> Log in</Link>
+                      <Link className="nav-link" to="/login"><i className="fas fa-sign-in-alt"></i> Log In</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/signup"><i className="fas fa-user-plus"></i> Sign Up</Link>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" to="/search"><i className="fas fa-users"></i> Search</Link>
@@ -126,7 +133,6 @@ class Main extends Component {
                 )}  
               </div>
             </nav>
-                
             
               <PropsRoute exact path="/" component={HomePage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
               <PrivateRoute path="/dashboard" component={DashboardPage}/>
