@@ -119,6 +119,9 @@ class ProfilePage extends Component {
           <div className="w3-container">
             <p><i className="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-indigo" />Full Stack Developer</p>
             <p><i className="fa fa-home fa-fw w3-margin-right w3-large w3-text-indigo" />Dallas, TX</p>
+            <p><i className="fa fa-linkedin fa-fw w3-margin-right w3-large w3-text-indigo" />LinkedIn</p>
+            <p><i className="fa fa-github fa-fw w3-margin-right w3-large w3-text-indigo" />GitHub</p>
+            <p><i className="fa fa-car fa-fw w3-margin-right w3-large w3-text-indigo" />Willing to Relocate: Yes</p>
             <p><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-indigo" />sharebear31496@gmail.com</p>
             <p><i className="fa fa-phone fa-fw w3-margin-right w3-large w3-text-indigo" />2145555555</p>
             <hr />
@@ -171,14 +174,14 @@ class ProfilePage extends Component {
       {/* Right Column */}
       <div className="w3-twothird">
         <div className="w3-container w3-card w3-white w3-margin-bottom">
-          <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-indigo" />Work Experience</h2>
+          <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-user fa-fw w3-margin-right w3-xxlarge w3-text-indigo" />About</h2>
           <div className="w3-container">
-            <h5 className="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
-            <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />Jan 2015 - <span className="w3-tag w3-indigo w3-round">Current</span></h6>
-            <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+            <h5 className="w3-opacity"><b></b></h5>
+            <h6 className="w3-text-indigo"><i  /><span className="w3-tag w3-indigo w3-round"></span></h6>
+            <p>I love the environment. I want to use code to fight climate change!</p>
             <hr />
           </div>
-          <div className="w3-container">
+          {/* <div className="w3-container">
             <h5 className="w3-opacity"><b>Web Developer / something.com</b></h5>
             <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />Mar 2012 - Dec 2014</h6>
             <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
@@ -188,7 +191,7 @@ class ProfilePage extends Component {
             <h5 className="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
             <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />Jun 2010 - Mar 2012</h6>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br />
-          </div>
+          </div> */}
         </div>
         <div className="w3-container w3-card w3-white">
           <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-indigo" />Education</h2>
