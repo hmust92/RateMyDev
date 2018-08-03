@@ -228,8 +228,8 @@ class ProfilePage extends Component {
             <hr />
           </div>
           <div className="w3-container">
-            <h5 className="w3-opacity"><b>Tell me about a time you missed (or almost missed) a deadline. How did you react when you realized you were falling behind? What did that experience teach you?</b></h5>
-            <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />Accept what you cannot control. That's my mantra</h6>
+            <h5 className="w3-opacity"><b>What are you passionate about? (Causes, Activities, Hobbies, etc.)</b></h5>
+            <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />I love to rock climb and I voluteer for Dallas Homeless Organization</h6>
             {/* <p>I love documentation! I'd dive right in...as long as it takes.</p> */}
             <hr />
           </div>
