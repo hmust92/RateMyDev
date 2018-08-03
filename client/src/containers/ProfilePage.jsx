@@ -65,18 +65,18 @@ class ProfilePage extends React.Component {
       <div className="w3-third">
         <div className="w3-white w3-text-grey w3-card-4">
           <div className="w3-display-container">
-            <img src="/w3images/avatar_hat.jpg" style={{width: '100%'}} alt="Avatar" />
+            <img src="/images/sherryyang.jpeg" style={{width: '100%'}} alt="Avatar" />
             <div className="w3-display-bottomleft w3-container w3-text-black">
               <h2>Sherry Yang</h2>
             </div>
           </div>
           <div className="w3-container">
-            <p><i className="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal" />Designer</p>
-            <p><i className="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal" />London, UK</p>
-            <p><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal" />ex@mail.com</p>
-            <p><i className="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal" />1224435534</p>
+            <p><i className="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal" />Full Stack Developer</p>
+            <p><i className="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal" />Dallas, TX</p>
+            <p><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal" />sharebear31496@gmail.com</p>
+            <p><i className="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal" />2145555555</p>
             <hr />
-            <p className="w3-large"><b><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-teal" />Skills</b></p>
+            <p className="w3-large"><b><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-teal" />Technical Skills</b></p>
             <p>Javascript</p>
             <div className="w3-light-grey w3-round-xlarge w3-small">
               <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width: '90%'}}>90%</div>
@@ -96,7 +96,7 @@ class ProfilePage extends React.Component {
               <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width: '50%'}}>50%</div>
             </div>
             <br />
-            <p className="w3-large w3-text-theme"><b><i className="fa fa-globe fa-fw w3-margin-right w3-text-teal" />Languages</b></p>
+            <p className="w3-large w3-text-theme"><b><i className="fa fa-globe fa-fw w3-margin-right w3-text-teal" />Soft Skills</b></p>
             <p>MySQL</p>
             <div className="w3-light-grey w3-round-xlarge">
               <div className="w3-round-xlarge w3-teal" style={{height: 24, width: '100%'}} />
