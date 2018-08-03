@@ -117,43 +117,51 @@ class ProfilePage extends Component {
             </div>
           </div>
           <div className="w3-container">
-            <p><i className="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal" />Full Stack Developer</p>
-            <p><i className="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal" />Dallas, TX</p>
-            <p><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal" />sharebear31496@gmail.com</p>
-            <p><i className="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal" />2145555555</p>
+            <p><i className="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-indigo" />Full Stack Developer</p>
+            <p><i className="fa fa-home fa-fw w3-margin-right w3-large w3-text-indigo" />Dallas, TX</p>
+            <p><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-indigo" />sharebear31496@gmail.com</p>
+            <p><i className="fa fa-phone fa-fw w3-margin-right w3-large w3-text-indigo" />2145555555</p>
             <hr />
-            <p className="w3-large"><b><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-teal" />Technical Skills</b></p>
+            <p className="w3-large"><b><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-indigo" />Technical Skills</b></p>
             <p>Javascript</p>
             <div className="w3-light-grey w3-round-xlarge w3-small">
-              <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width: '90%'}}>90%</div>
+              <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: '90%'}}>90%</div>
             </div>
             <p>HTML</p>
             <div className="w3-light-grey w3-round-xlarge w3-small">
-              <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width: '80%'}}>
+              <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: '80%'}}>
                 <div className="w3-center w3-text-white">80%</div>
               </div>
             </div>
             <p>CSS</p>
             <div className="w3-light-grey w3-round-xlarge w3-small">
-              <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width: '75%'}}>75%</div>
+              <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: '75%'}}>75%</div>
             </div>
             <p>Node.js</p>
             <div className="w3-light-grey w3-round-xlarge w3-small">
-              <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width: '50%'}}>50%</div>
+              <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: '50%'}}>50%</div>
             </div>
             <br />
-            <p className="w3-large w3-text-theme"><b><i className="fa fa-globe fa-fw w3-margin-right w3-text-teal" />Soft Skills</b></p>
-            <p>MySQL</p>
+            <p className="w3-large w3-text-theme"><b><i className="fa fa-globe fa-fw w3-margin-right w3-text-indigo" />Soft Skills</b></p>
+            <p>Work Ethic</p>
             <div className="w3-light-grey w3-round-xlarge">
-              <div className="w3-round-xlarge w3-teal" style={{height: 24, width: '100%'}} />
+              <div className="w3-round-xlarge w3-indigo" style={{height: 24, width: '100%'}} />
             </div>
-            <p>Balsamiq</p>
+            <p>Communication Skills</p>
             <div className="w3-light-grey w3-round-xlarge">
-              <div className="w3-round-xlarge w3-teal" style={{height: 24, width: '55%'}} />
+              <div className="w3-round-xlarge w3-indigo" style={{height: 24, width: '55%'}} />
             </div>
-            <p>Git</p>
+            <p>Creative Problem Solving</p>
             <div className="w3-light-grey w3-round-xlarge">
-              <div className="w3-round-xlarge w3-teal" style={{height: 24, width: '25%'}} />
+              <div className="w3-round-xlarge w3-indigo" style={{height: 24, width: '55%'}} />
+            </div>
+            <p>Time Management</p>
+            <div className="w3-light-grey w3-round-xlarge">
+              <div className="w3-round-xlarge w3-indigo" style={{height: 24, width: '55%'}} />
+            </div>
+            <p>Ability to Work on a Team</p>
+            <div className="w3-light-grey w3-round-xlarge">
+              <div className="w3-round-xlarge w3-indigo" style={{height: 24, width: '25%'}} />
             </div>
             <br />
           </div>
@@ -163,42 +171,42 @@ class ProfilePage extends Component {
       {/* Right Column */}
       <div className="w3-twothird">
         <div className="w3-container w3-card w3-white w3-margin-bottom">
-          <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal" />Work Experience</h2>
+          <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-indigo" />Work Experience</h2>
           <div className="w3-container">
             <h5 className="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
-            <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right" />Jan 2015 - <span className="w3-tag w3-teal w3-round">Current</span></h6>
+            <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />Jan 2015 - <span className="w3-tag w3-indigo w3-round">Current</span></h6>
             <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
             <hr />
           </div>
           <div className="w3-container">
             <h5 className="w3-opacity"><b>Web Developer / something.com</b></h5>
-            <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right" />Mar 2012 - Dec 2014</h6>
+            <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />Mar 2012 - Dec 2014</h6>
             <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
             <hr />
           </div>
           <div className="w3-container">
             <h5 className="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
-            <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right" />Jun 2010 - Mar 2012</h6>
+            <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />Jun 2010 - Mar 2012</h6>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br />
           </div>
         </div>
         <div className="w3-container w3-card w3-white">
-          <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal" />Education</h2>
+          <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-indigo" />Education</h2>
           <div className="w3-container">
             <h5 className="w3-opacity"><b>W3Schools.com</b></h5>
-            <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right" />Forever</h6>
+            <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />Forever</h6>
             <p>Web Development! All I need to know in one place</p>
             <hr />
           </div>
           <div className="w3-container">
             <h5 className="w3-opacity"><b>London Business School</b></h5>
-            <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right" />2013 - 2015</h6>
+            <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />2013 - 2015</h6>
             <p>Master Degree</p>
             <hr />
           </div>
           <div className="w3-container">
             <h5 className="w3-opacity"><b>School of Coding</b></h5>
-            <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right" />2010 - 2013</h6>
+            <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />2010 - 2013</h6>
             <p>Bachelor Degree</p><br />
           </div>
         </div>
@@ -208,20 +216,11 @@ class ProfilePage extends Component {
     </div>
     {/* End Page Container */}
   </div>
-  <footer className="w3-container w3-teal w3-center w3-margin-top">
-    <p>Find me on social media.</p>
-    <i className="fa fa-facebook-official w3-hover-opacity" />
-    <i className="fa fa-instagram w3-hover-opacity" />
-    <i className="fa fa-snapchat w3-hover-opacity" />
-    <i className="fa fa-pinterest-p w3-hover-opacity" />
-    <i className="fa fa-twitter w3-hover-opacity" />
-    <i className="fa fa-linkedin w3-hover-opacity" />
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-  </footer>
+
 </div>
 
 
-        <h1>hello</h1>
+        
         </div>
 
 
