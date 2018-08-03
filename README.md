@@ -1,14 +1,34 @@
 ##  QUICK START
 
+
+(in the terminal (aka terminal 1) run...
+
+```
 npm install
+```
 
-cd to client folder
+```
+cd client
+```
 
+```
 npm install
+```
 
+(in a seperate terminal run:)
+'''
+brew services start mongodb
+```
 
+(back in the terminal 1)
+
+'''
+cd ..
+'''
+
+'''
 npm run start:dev
-
+'''
 
 ##Demo Day Slide Deck
 https://docs.google.com/presentation/d/16DpMm0F2r1e9zeb7bpkPtoatQkR7pW3gqDFWisIcy80/edit?usp=sharing
