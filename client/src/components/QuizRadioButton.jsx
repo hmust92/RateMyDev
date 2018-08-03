@@ -53,6 +53,9 @@ var RadioButton = React.createClass({
         Option 5
       </label>
     </div>
+
+    <button class="btn btn-default" type="add">Save</button>
+
   </form>
 
   }
