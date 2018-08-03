@@ -21,7 +21,7 @@ class AboutPage extends React.Component {
         <div className="row">
   <div className="column">
     <div className="card">
-      <img src="../../public/images/dkd.jpeg" alt="David" style={{width: '100%'}} />
+      <img src="/images/dkd.jpeg" alt="David" style={{width: '100%'}} />
       <div className="container">
         <h2>David Daniels</h2>
         <p className="title">UX Developer</p>
@@ -33,7 +33,7 @@ class AboutPage extends React.Component {
   </div>
   <div className="column">
     <div className="card">
-      <img src="paulrose.jpeg" alt="Paul" style={{width: '100%'}} />
+      <img src="/images/paulrose.jpeg" alt="Paul" style={{width: '100%'}} />
       <div className="container">
         <h2>Paul Rose</h2>
         <p className="title">Full Stack Developer</p>
@@ -45,7 +45,7 @@ class AboutPage extends React.Component {
   </div>
   <div className="column">
     <div className="card">
-      <img src="hasanmustafa.jpeg" alt="Hasan" style={{width: '100%'}} />
+      <img src="/images/hasanmustafa.jpeg" alt="Hasan" style={{width: '100%'}} />
       <div className="container">
         <h2>Hasan Mustafa</h2>
         <p className="title">Full Stack Developer</p>
@@ -58,11 +58,11 @@ class AboutPage extends React.Component {
   </div>
   <div className="column">
     <div className="card">
-      <img src="sherryyang.jpeg" alt="Sherry" style={{width: '100%'}} />
+      <img src="/images/sherryyang.jpeg" alt="Sherry" style={{width: '100%'}} />
       <div className="container">
         <h2>Sherry Yang</h2>
         <p className="title">UI</p>
-        <p>Anticipates the obstacles. Offers an alternative view</p>
+        <p>Anticipates the obstacles. Offers an alternative view.</p>
         <p>sharebear31496@gmail.com</p>
         <p><button><a href="mailto:sharebear31496@gmail.com">Contact</a></button></p>
       </div>
@@ -70,7 +70,7 @@ class AboutPage extends React.Component {
   </div>
   <div className="column">
     <div className="card">
-      <img src="ec.jpeg" alt="Elaulas" style={{width: '100%'}} />
+      <img src="/images/ec.jpeg" alt="Elaulas" style={{width: '100%'}} />
       <div className="container">
         <h2>Elaulas Cristiano</h2>
         <p className="title">Subject Matter Expert (SME)</p>

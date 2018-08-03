@@ -1,5 +1,5 @@
 import Auth from '../modules/Auth';
-import Dashboard from '../components/Dashboard.jsx';
+//import Dashboard from '../components/Dashboard.jsx';
 import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
 import React, { Component } from "react";
 
@@ -89,7 +89,6 @@ class ProfilePage extends Component {
    render() {
     return (
       <div>
-      <Dashboard secretData={this.state.secretData} user={this.state.user} />
       <SelfSurveyForm
       handleSkillChange={this.handleSkillChange}
       handlePointsChange={this.handlePointsChange}

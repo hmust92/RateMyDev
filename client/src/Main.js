@@ -20,7 +20,7 @@ import HomePage from './containers/HomePage.jsx';
 import LoginPage from './containers/LoginPage.jsx';
 import LogoutFunction from './containers/LogoutFunction.jsx';
 import SignUpPage from './containers/SignUpPage.jsx';
-import DashboardPage from './containers/DashboardPage.jsx';
+//import DashboardPage from './containers/DashboardPage.jsx';
 import Auth from './modules/Auth';
 import ProfilePage from './containers/ProfilePage.jsx';
 import Search from './containers/Search.jsx';
@@ -139,7 +139,6 @@ class Main extends Component {
             </nav>
             
               <PropsRoute exact path="/" component={HomePage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
-              <PrivateRoute path="/dashboard" component={DashboardPage}/>
               <LoggedOutRoute path="/login" component={LoginPage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
               <LoggedOutRoute path="/signup" component={SignUpPage}/>
               <Route path="/about" component={AboutPage}/>
