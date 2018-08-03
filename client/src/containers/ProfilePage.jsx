@@ -1,26 +1,27 @@
-import React from 'react';
 import Auth from '../modules/Auth';
-import Dashboard from '../components/Dashboard.jsx';
+//import Dashboard from '../components/Dashboard.jsx';
+import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
+import React, { Component } from "react";
 
 
-class ProfilePage extends React.Component {
+class ProfilePage extends Component {
 
-  /**
-   * Class constructor.
-   */
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      secretData: '',
-      user: {}
-    };
-  }
+
+  state = {
+    secretData: '',
+    user: {},
+    tag: "",
+    points: ""
+  };
+  
+
+
 
   /**
    * This method will be executed after initial rendering.
    */
-  componentDidMount() {
+   componentDidMount() {
     const xhr = new XMLHttpRequest();
     xhr.open('get', '/api/me');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -38,17 +39,62 @@ class ProfilePage extends React.Component {
     xhr.send();
   }
 
+  handleSkillChange = (event) => {
+    this.setState({ tag: event.target.value });
+  }
+
+  handlePointsChange = (event) => {
+    this.setState({ points: event.target.value });
+  }
+
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    // const userData = {
+    //   "tag": this.state.tag,
+    //   "points": this.state.points
+    // }
+
+    const tagYo = this.state.tag;
+    const pointsYo = this.state.points;
+    // const userData = `tag=${tagYo}&points=${pointsYo}`;
+
+    const userData = {
+      tag: tagYo,
+      points: pointsYo
+    }
+
+    // console.log({userData)
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/api/me/survey', true);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
+    xhr.responseType = 'json';
+    xhr.onreadystatechange = function() {//Call a function when the state changes.
+      if(this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        // Request finished. Do processing here.
+      }
+    }
+    // xhr.send(...userData);
+    xhr.send(JSON.stringify(userData));
+
+    
+  }
+
+
   /**
    * Render the component.
    */
-  render() {
-    //return (<Dashboard secretData={this.state.secretData} user={this.state.user} />);
-
+   render() {
     return (
       <div>
-        <Dashboard secretData={this.state.secretData} user={this.state.user} />;
+      <SelfSurveyForm
+      handleSkillChange={this.handleSkillChange}
+      handlePointsChange={this.handlePointsChange}
+      handleFormSubmit={this.handleFormSubmit} 
+      />
 
-        <h1>hello</h1>
         <div>
   <title>Profile</title>
   <meta charSet="UTF-8" />
@@ -65,18 +111,18 @@ class ProfilePage extends React.Component {
       <div className="w3-third">
         <div className="w3-white w3-text-grey w3-card-4">
           <div className="w3-display-container">
-            <img src="/w3images/avatar_hat.jpg" style={{width: '100%'}} alt="Avatar" />
+            <img src="/images/sherryyang.jpeg" style={{width: '100%'}} alt="Avatar" />
             <div className="w3-display-bottomleft w3-container w3-text-black">
               <h2>Sherry Yang</h2>
             </div>
           </div>
           <div className="w3-container">
-            <p><i className="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal" />Designer</p>
-            <p><i className="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal" />London, UK</p>
-            <p><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal" />ex@mail.com</p>
-            <p><i className="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal" />1224435534</p>
+            <p><i className="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal" />Full Stack Developer</p>
+            <p><i className="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal" />Dallas, TX</p>
+            <p><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal" />sharebear31496@gmail.com</p>
+            <p><i className="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal" />2145555555</p>
             <hr />
-            <p className="w3-large"><b><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-teal" />Skills</b></p>
+            <p className="w3-large"><b><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-teal" />Technical Skills</b></p>
             <p>Javascript</p>
             <div className="w3-light-grey w3-round-xlarge w3-small">
               <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width: '90%'}}>90%</div>
@@ -96,7 +142,7 @@ class ProfilePage extends React.Component {
               <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width: '50%'}}>50%</div>
             </div>
             <br />
-            <p className="w3-large w3-text-theme"><b><i className="fa fa-globe fa-fw w3-margin-right w3-text-teal" />Languages</b></p>
+            <p className="w3-large w3-text-theme"><b><i className="fa fa-globe fa-fw w3-margin-right w3-text-teal" />Soft Skills</b></p>
             <p>MySQL</p>
             <div className="w3-light-grey w3-round-xlarge">
               <div className="w3-round-xlarge w3-teal" style={{height: 24, width: '100%'}} />
@@ -177,12 +223,11 @@ class ProfilePage extends React.Component {
 
         <h1>hello</h1>
         </div>
-    );
+
+
+      );
   }
 
 }
 
 export default ProfilePage;
-
-
-

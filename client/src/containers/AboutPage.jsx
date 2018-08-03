@@ -3,7 +3,6 @@ import Auth from '../modules/Auth';
 import '../css/About.css';
 //import Dashboard from '../components/Dashboard.jsx';
 
-
 class AboutPage extends React.Component {
   /**
    * Render the component.
