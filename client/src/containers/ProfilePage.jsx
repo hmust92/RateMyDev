@@ -2,6 +2,7 @@ import Auth from '../modules/Auth';
 //import Dashboard from '../components/Dashboard.jsx';
 import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
 import React, { Component } from "react";
+import RadioButton from '../components/QuizRadioButton.jsx';
 
 
 class ProfilePage extends Component {
@@ -94,6 +95,7 @@ class ProfilePage extends Component {
       handlePointsChange={this.handlePointsChange}
       handleFormSubmit={this.handleFormSubmit} 
       />
+
 
         <div>
   <title>Profile</title>
