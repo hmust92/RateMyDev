@@ -4,16 +4,19 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // import routes from './routes.js';
 
+import "./css/Main.css";
+
 import {
   BrowserRouter as Router,
   Route,
   Link,
   Redirect,
-  withRouter
+  Switch
+  //withRouter
 } from 'react-router-dom'
 
-import Base from './components/Base.jsx';
-import HomePage from './components/HomePage.jsx';
+//import Base from './components/Base.jsx';
+import HomePage from './containers/HomePage.jsx';
 import LoginPage from './containers/LoginPage.jsx';
 import LogoutFunction from './containers/LogoutFunction.jsx';
 import SignUpPage from './containers/SignUpPage.jsx';
@@ -21,6 +24,8 @@ import DashboardPage from './containers/DashboardPage.jsx';
 import Auth from './modules/Auth';
 import ProfilePage from './containers/ProfilePage.jsx';
 import Search from './containers/Search.jsx';
+import Footer from './components/davidcomponents/Footer'
+import AboutPage from './containers/AboutPage.jsx';
 
 
 // remove tap delay, essential for MaterialUI to work properly
@@ -34,7 +39,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       <Redirect to={{
         pathname: '/',
         state: { from: props.location }
-      }}/>
+      }}
+      />
     )
   )}/>
 )
@@ -76,48 +82,85 @@ class Main extends Component {
     this.setState({ authenticated: Auth.isUserAuthenticated() })
   }
 
+  // logoutNow () {
+  //   Auth.deauthenticateUser();
+  // }
+
   render() {
     return (
+      <div>
       <MuiThemeProvider muiTheme={getMuiTheme()}>
-        <Router>
+        <Router>  
           <div>
-            <div className="top-bar">
-              <div className="top-bar-left">
-                <Link to="/">React App</Link>
+            <nav className="navbar navbar-expand-lg navbar-light" id="navbar">
+              <Link className="navbar-brand" to="/"><i className="fas fa-laptop"></i> Rate That Dev</Link>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarNav">
+                {this.state.authenticated ? (
+                  <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/"><i className="fas fa-home"></i> Home</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/about"><i className="far fa-question-circle"></i> About</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/profile"><i className="fas fa-user"></i> Profile</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/search"><i className="fas fa-users"></i> Search</Link>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" href="/logout"><i className="fas fa-sign-out-alt"></i> Log Out</a>
+                    </li>
+                  </ul>
+                ) : (
+                  <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/"><i className="fas fa-home"></i> Home</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/about"><i className="far fa-question-circle"></i> About</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/login"><i className="fas fa-sign-in-alt"></i> Log In</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/signup"><i className="fas fa-user-plus"></i> Sign Up</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/search"><i className="fas fa-users"></i> Search</Link>
+                    </li>
+                  </ul>
+                )}  
               </div>
-              {this.state.authenticated ? (
-                <div className="top-bar-right">
-                  <Link to="/dashboard">Dashboard</Link>
-                  <Link to="/about">About</Link>
-                  <Link to="/profile">Profile</Link>
-                  <Link to="/search">Search</Link>
-                  <Link to="/logout">Log out</Link>
-                </div>
-              ) : (
-                <div className="top-bar-right">
-                  <Link to="/about">About</Link>
-                  <Link to="/search">Search</Link>
-                  <Link to="/login">Log in</Link>
-                  <Link to="/signup">Sign up</Link>
-                </div>
-              )}
-
-            </div>
-
-            <PropsRoute exact path="/" component={HomePage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
-            <PrivateRoute path="/dashboard" component={DashboardPage}/>
-            <LoggedOutRoute path="/login" component={LoginPage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
-            <LoggedOutRoute path="/signup" component={SignUpPage}/>
-            <Route path="/logout" component={LogoutFunction}/>
-            <Route path="/search" component={Search}/>
-            <Route path="/profile" component={ProfilePage}/>
+            </nav>
+            
+              <PropsRoute exact path="/" component={HomePage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
+              <PrivateRoute path="/dashboard" component={DashboardPage}/>
+              <LoggedOutRoute path="/login" component={LoginPage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
+              <LoggedOutRoute path="/signup" component={SignUpPage}/>
+              <Route path="/about" component={AboutPage}/>
+              <Route path="/logout" component={LogoutFunction}/>
+              <Route path="/search" component={Search}/>
+              <PrivateRoute path="/profile" component={ProfilePage}/>
+             
 
           </div>
-
-        </Router>
+          
+        </Router> 
       </MuiThemeProvider>
+      <Footer />
+      </div> 
     );
   }
 }
 
 export default Main;
+
+
+// <li className="nav-item">
+//  <Link className="nav-link" to="/logout"><i className="fas fa-sign-out-alt"></i> Log Out</Link>
+// </li>
