@@ -14,9 +14,6 @@ class ProfilePage extends Component {
     tag: "",
     points: ""
   };
-  
-
-
 
   /**
    * This method will be executed after initial rendering.
@@ -93,6 +90,8 @@ class ProfilePage extends Component {
       handleSkillChange={this.handleSkillChange}
       handlePointsChange={this.handlePointsChange}
       handleFormSubmit={this.handleFormSubmit} 
+
+      //{var skill= console.log(this.state.user.selfSurveys[0].tag)}
       />
 
         <div>
