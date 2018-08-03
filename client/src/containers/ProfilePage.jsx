@@ -194,23 +194,42 @@ class ProfilePage extends Component {
           </div> */}
         </div>
         <div className="w3-container w3-card w3-white">
-          <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-indigo" />Education</h2>
+          <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-superpowers fa-fw w3-margin-right w3-xxlarge w3-text-indigo" />Personality + Work Culture</h2>
           <div className="w3-container">
-            <h5 className="w3-opacity"><b>W3Schools.com</b></h5>
-            <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />Forever</h6>
-            <p>Web Development! All I need to know in one place</p>
+            <h5 className="w3-opacity"><b>If your manager asked you to complete a task you thought impossible at first, how would you go about it?</b></h5>
+            <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />I love documentation! I'd dive right in...as long as it takes.</h6>
+            {/* <p>I love documentation! I'd dive right in...as long as it takes.</p> */}
             <hr />
           </div>
           <div className="w3-container">
-            <h5 className="w3-opacity"><b>London Business School</b></h5>
-            <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />2013 - 2015</h6>
-            <p>Master Degree</p>
+            <h5 className="w3-opacity"><b>Tell me about a time you missed (or almost missed) a deadline. How did you react when you realized you were falling behind? What did that experience teach you?</b></h5>
+            <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />Accept what you cannot control. That's my mantra</h6>
+            {/* <p>I love documentation! I'd dive right in...as long as it takes.</p> */}
             <hr />
           </div>
           <div className="w3-container">
-            <h5 className="w3-opacity"><b>School of Coding</b></h5>
-            <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />2010 - 2013</h6>
-            <p>Bachelor Degree</p><br />
+            <h5 className="w3-opacity"><b>Do you prefer working in a team or on your own? Why?</b></h5>
+            <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />I love teams! I grew up in a big family!</h6>
+            {/* <p>I love documentation! I'd dive right in...as long as it takes.</p> */}
+            <hr />
+          </div>
+          <div className="w3-container">
+            <h5 className="w3-opacity"><b>If you could change one thing about your personality at the snap of your fingers what would it be and why?</b></h5>
+            <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />I wish I were more outgoing...</h6>
+            {/* <p>I love documentation! I'd dive right in...as long as it takes.</p> */}
+            <hr />
+          </div>
+          <div className="w3-container">
+            <h5 className="w3-opacity"><b>Tell me about a time your manager wasn’t satisfied with the results of your work. How did you discuss the issues and what did you do differently the next time?</b></h5>
+            <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />I am a perfectionist. My manager is always happy - seriously.</h6>
+            {/* <p>I love documentation! I'd dive right in...as long as it takes.</p> */}
+            <hr />
+          </div>
+          <div className="w3-container">
+            <h5 className="w3-opacity"><b>Tell me about a time you missed (or almost missed) a deadline. How did you react when you realized you were falling behind? What did that experience teach you?</b></h5>
+            <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />Accept what you cannot control. That's my mantra</h6>
+            {/* <p>I love documentation! I'd dive right in...as long as it takes.</p> */}
+            <hr />
           </div>
         </div>
         {/* End Right Column */}
