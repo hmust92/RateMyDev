@@ -121,11 +121,11 @@ class ProfilePage extends Component {
             <p><i className="fa fa-home fa-fw w3-margin-right w3-large w3-text-indigo" />Dallas, TX</p>
             <p><i className="fa fa-linkedin fa-fw w3-margin-right w3-large w3-text-indigo" />LinkedIn</p>
             <p><i className="fa fa-github fa-fw w3-margin-right w3-large w3-text-indigo" />GitHub</p>
-            <p><i className="fa fa-car fa-fw w3-margin-right w3-large w3-text-indigo" />Willing to Relocate: Yes</p>
+            <p><i className="fa fa-plane fa-fw w3-margin-right w3-large w3-text-indigo" />Willing to Relocate: Yes</p>
             <p><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-indigo" />sharebear31496@gmail.com</p>
             <p><i className="fa fa-phone fa-fw w3-margin-right w3-large w3-text-indigo" />2145555555</p>
             <hr />
-            <p className="w3-large"><b><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-indigo" />Technical Skills</b></p>
+            <p className="w3-large"><b><i className="fa fa-laptop fa-fw w3-margin-right w3-text-indigo" />Technical Skills</b></p>
             <p>Javascript</p>
             <div className="w3-light-grey w3-round-xlarge w3-small">
               <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: '90%'}}>90%</div>
@@ -145,7 +145,7 @@ class ProfilePage extends Component {
               <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: '50%'}}>50%</div>
             </div>
             <br />
-            <p className="w3-large w3-text-theme"><b><i className="fa fa-globe fa-fw w3-margin-right w3-text-indigo" />Soft Skills</b></p>
+            <p className="w3-large w3-text-theme"><b><i className="fa fa-users fa-fw w3-margin-right w3-text-indigo" />Soft Skills</b></p>
             <p>Work Ethic</p>
             <div className="w3-light-grey w3-round-xlarge">
               <div className="w3-round-xlarge w3-indigo" style={{height: 24, width: '100%'}} />
