@@ -15,7 +15,7 @@ cd client
 npm install
 ```
 
-(in a seperate terminal run:)
+in a seperate terminal start up mongoDB. If you use homebrew you can run:)
 '''
 brew services start mongodb
 ```
