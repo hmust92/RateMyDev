@@ -23,7 +23,7 @@ const selfSurveyForm = (props) =>
     <form>
     <div className="form-group">
     <label htmlFor="Skills">Skill</label>
-    <input onChange={props.handleSkillChange} type="text" className="form-control" id="Skill" />
+    <input onChange={props.handleSkillChange} type="text" className="form-control" id="Skill"  />
     </div>
     <div className="form-group">
     <label htmlFor="Points">Points</label>

@@ -68,18 +68,22 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      authenticated: false
+      authenticated: false,
+      userId: null
     }
   };
 
   componentDidMount() {
     // check if user is logged in on refresh
     this.toggleAuthenticateStatus()
+
   }
 
   toggleAuthenticateStatus() {
     // check authenticated status and toggle state based on that
-    this.setState({ authenticated: Auth.isUserAuthenticated() })
+    this.setState({ authenticated: Auth.isUserAuthenticated(),
+    userId: Auth.getUserId() })
+
   }
 
   // logoutNow () {
@@ -107,7 +111,7 @@ class Main extends Component {
                       <Link className="nav-link" to="/about"><i className="far fa-question-circle"></i> About</Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/profile"><i className="fas fa-user"></i> Profile</Link>
+                      <Link className="nav-link" to={"/profile/" + this.state.userId}><i className="fas fa-user"></i> Profile</Link>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" to="/search"><i className="fas fa-users"></i> Search</Link>
@@ -144,7 +148,7 @@ class Main extends Component {
               <Route path="/about" component={AboutPage}/>
               <Route path="/logout" component={LogoutFunction}/>
               <Route path="/search" component={Search}/>
-              <PrivateRoute path="/:userId" component={ProfilePage}/>
+              <PrivateRoute path="/profile/:userId" component={ProfilePage}/>
              
 
           </div>

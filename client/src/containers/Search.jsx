@@ -8,15 +8,18 @@ import Alert from "../components/davidcomponents/Alert";
 class Search extends Component {
   state = {
     search: "",
-    breeds: [],
+    stackOverflowSkills: [],
     results: [],
     error: ""
   };
 
   // When the component mounts, get a list of all available skills and update this.state.breeds
   componentDidMount() {
-    API.getBaseBreedsList()
-      .then(res => this.setState({ breeds: res.data.message }))
+    API.getSkillsList()
+      .then(res => {
+        console.log(res)
+        this.setState({ stackOverflowSkills: res.data.items })
+      })
       .catch(err => console.log(err));
   }
 
@@ -49,7 +52,7 @@ class Search extends Component {
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
-            breeds={this.state.breeds}
+            stackOverflowSkills={this.state.stackOverflowSkills}
           />
           <SearchResults results={this.state.results} />
         </Container>

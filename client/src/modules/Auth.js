@@ -1,3 +1,5 @@
+import jwt from "jsonwebtoken";
+
 class Auth {
 
   /**
@@ -35,6 +37,15 @@ class Auth {
   static getToken() {
     return localStorage.getItem('token');
   }
+
+  static getUserId() {
+
+    const myDecodedToken = jwt.decode(Auth.getToken()) || {};
+      console.log(myDecodedToken)
+
+      return myDecodedToken.sub;
+    }
+
 
 }
 
