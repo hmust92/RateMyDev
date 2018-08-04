@@ -15,6 +15,20 @@ router.get('/me', (req, res) => {
 });
 });
 
+router.get('/:userId', (req, res) => {
+
+	db.findById(req.params.userId)
+	.then((userInfo) => {
+		console.log(userInfo)
+		res.json({
+			user: userInfo
+		})
+	})
+	.catch(() => res.status(404).json({
+
+	}))
+});
+
 router.get("/users", (req, res) => {
 	db.find({})
 	.then(function(userResponse){
@@ -44,6 +58,7 @@ router.post("/me/survey", (req, res) => {
 
 		userInfo.selfSurveys = userInfo.selfSurveys.concat([req.body])
 		userInfo.save()
+		res.json(req.body)
 	});
 
 	

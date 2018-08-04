@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Auth from '../modules/Auth';
 //import Dashboard from '../components/Dashboard.jsx';
 import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
@@ -37,23 +38,27 @@ class ProfilePage extends Component {
   /**
    * This method will be executed after initial rendering.
    */
-  componentDidMount() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('get', '/api/me');
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    // set the authorization HTTP header
-    xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
-    xhr.responseType = 'json';
-    xhr.addEventListener('load', () => {
-      if (xhr.status === 200) {
-        this.setState({
-          secretData: xhr.response.message,
-          user: xhr.response.user
-        });
+   componentDidMount() {
+    console.log(this.props)
+    this.loadData()
 
+  }
+
+  loadData = () => {
+
+    axios.get(`/api/${this.props.match.params.userId}`,
+    {
+      headers: {
+        'Authorization': `bearer ${Auth.getToken()}`,
+        'Content-type': 'application/json',
       }
-    });
-    xhr.send();
+    })
+    .then(response => {
+      this.setState({
+        user: response.data.user,
+      });
+    })
+
   }
 
   handleSkillChange = (event) => {
@@ -71,11 +76,6 @@ class ProfilePage extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
 
-    // const userData = {
-    //   "tag": this.state.tag,
-    //   "points": this.state.points
-    // }
-
     const tagYo = this.state.tag;
     const pointsYo = this.state.points;
     const skillTypeYo = this.state.skillType;
@@ -88,20 +88,22 @@ class ProfilePage extends Component {
 
     }
 
+    let axiosConfig = {
+      headers: {
+        'Authorization': `bearer ${Auth.getToken()}`,
+        'Content-type': 'application/json',
+      }
+    };
+
     // console.log({userData)
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', '/api/me/survey', true);
-    xhr.setRequestHeader('Content-type', 'application/json');
-    xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
-    xhr.responseType = 'json';
-    xhr.onreadystatechange = function () {//Call a function when the state changes.
-      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-        // Request finished. Do processing here.
-      }
-    }
-    // xhr.send(...userData);
-    xhr.send(JSON.stringify(userData));
+      axios.post('/api/me/survey', userData, axiosConfig)
+      .then((res) => {
+        this.loadData()
+      })
+      .catch((err) => {
+        console.log("AXIOS ERROR: ", err);
+      })
 
 
   }
@@ -131,6 +133,13 @@ class ProfilePage extends Component {
             </button>
       </main>
 
+
+      {/* <div>
+      <SelfSurveyForm
+      handleSkillChange={this.handleSkillChange}
+      handlePointsChange={this.handlePointsChange}
+      handleSkillTypeChange={this.handleSkillTypeChange}
+      handleFormSubmit={this.handleFormSubmit}  */}
 
 
       <div>

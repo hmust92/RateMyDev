@@ -6,6 +6,12 @@ import React, { Component } from "react";
 
 
 
+const convertToPercent = function (points) {
+    return (points / 5) * 100;
+    // const percentConversion = (points / 5) * 100;
+    // const 
+}
+
 
 const SoftSkills = props => (
 
@@ -20,7 +26,7 @@ const SoftSkills = props => (
                         <ul key={skill._id}>
                             <p>{skill.tag}</p>
                             <div className="w3-light-grey w3-round-xlarge w3-small">
-                                <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: skill.points}}>{skill.points}</div>
+                                <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: `${convertToPercent(skill.points)}%`}}>{skill.points}</div>
                             </div>
                         </ul>
                     ))}

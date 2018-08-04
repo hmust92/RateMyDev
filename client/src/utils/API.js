@@ -9,7 +9,7 @@ export default {
   getDogsOfBreed: function(breed) {
     return axios.get("https://dog.ceo/api/breed/" + breed + "/images");
   },
-  getBaseBreedsList: function() {
-    return axios.get("https://dog.ceo/api/breeds/list");
+  getSkillsList: function() {
+    return axios.get("https://api.stackexchange.com/2.2/tags?pagesize=50&order=desc&sort=popular&site=stackoverflow");
   }
 };
