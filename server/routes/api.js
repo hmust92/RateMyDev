@@ -8,6 +8,9 @@ const db = require("../models/user.js");
 
 router.get('/me', (req, res) => {
 	console.log(req.user._id)
+	console.log("==============");
+	console.log(req.user.selfSurveys[0].tag)
+	console.log("==============");
 	res.status(200).json({
 		message: "You're authorized to see this secret message.",
 // user values passed through from auth middleware
