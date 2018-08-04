@@ -24,7 +24,7 @@ class ProfilePage extends Component {
    */
    componentDidMount() {
     const xhr = new XMLHttpRequest();
-    xhr.open('get', '/api/me');
+    xhr.open('get', `/api/${this.props.match.params.userId}`);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     // set the authorization HTTP header
     xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
@@ -32,9 +32,9 @@ class ProfilePage extends Component {
     xhr.addEventListener('load', () => {
       if (xhr.status === 200) {
         this.setState({
-          secretData: xhr.response.message,
           user: xhr.response.user
         });
+        console.log(this.state.user)
 
       }
     });

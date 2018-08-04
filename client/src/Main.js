@@ -144,7 +144,7 @@ class Main extends Component {
               <Route path="/about" component={AboutPage}/>
               <Route path="/logout" component={LogoutFunction}/>
               <Route path="/search" component={Search}/>
-              <PrivateRoute path="/profile" component={ProfilePage}/>
+              <PrivateRoute path="/:userId" component={ProfilePage}/>
              
 
           </div>

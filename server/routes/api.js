@@ -15,6 +15,15 @@ router.get('/me', (req, res) => {
 });
 });
 
+router.get('/:userId', (req, res) => {
+
+	db.findById(req.params.userId)
+	.then((userInfo) => {
+		console.log(userInfo)
+		res.json(userInfo)
+	})
+});
+
 router.get("/users", (req, res) => {
 	db.find({})
 	.then(function(userResponse){
