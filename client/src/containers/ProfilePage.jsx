@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Auth from '../modules/Auth';
 //import Dashboard from '../components/Dashboard.jsx';
-import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
+// import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
 import React, { Component } from "react";
 import RadioButton from '../components/QuizRadioButton.jsx';
 
@@ -143,14 +143,10 @@ class ProfilePage extends Component {
 
 
       <div>
-        <SelfSurveyForm
-          handleSkillChange={this.handleSkillChange}
-          handlePointsChange={this.handlePointsChange}
-          handleSkillTypeChange={this.handleSkillTypeChange}
-          handleFormSubmit={this.handleFormSubmit}
 
-        //{var skill= console.log(this.state.user.selfSurveys[0].tag)}
-        />
+
+        {/* {var skill= console.log(this.state.user.selfSurveys[0].tag)} */}
+        
         <RadioButton />
       
         <div>

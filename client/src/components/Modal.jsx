@@ -18,6 +18,12 @@ const Modal = (props) => {
     <form>
 
 <div className="form-group">
+<label htmlFor="url">Profile Picture</label>
+<input onChange={props.handleFirstNameChange} type="url" className="form-control" id="Picture" 
+  placeholder="https://image-link.com" pattern="https://.*" size="20" required />
+</div> 
+
+<div className="form-group">
 <label htmlFor="FirstName">First Name</label>
 <input onChange={props.handleFirstNameChange} type="text" className="form-control" id="FirstName" />
 </div> 
