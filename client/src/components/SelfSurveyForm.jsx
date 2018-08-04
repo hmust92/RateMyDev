@@ -1,6 +1,6 @@
 import React from "react";
 
-const selfSurveyForm = (props) => 
+const SelfSurveyForm = (props) => 
 
     <div className="container">
     <div className="row">
@@ -126,4 +126,4 @@ const selfSurveyForm = (props) =>
 
 
 
-export default selfSurveyForm;
+export default SelfSurveyForm;
