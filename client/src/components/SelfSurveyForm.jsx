@@ -23,11 +23,15 @@ const selfSurveyForm = (props) =>
     <form>
     <div className="form-group">
     <label htmlFor="Skills">Skill</label>
-    <input onChange={props.handleSkillChange} type="text" className="form-control" id="Skill" aria-describedby="emailHelp" />
+    <input onChange={props.handleSkillChange} type="text" className="form-control" id="Skill" />
     </div>
     <div className="form-group">
     <label htmlFor="Points">Points</label>
     <input onChange={props.handlePointsChange} type="text" className="form-control" id="Points" />
+    </div>
+    <div className="form-group">
+    <label htmlFor="Points">Skill Type</label>
+    <input onChange={props.handleSkillTypeChange} type="text" className="form-control" id="SkillType" />
     </div>
     <button onClick={props.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
     </form>

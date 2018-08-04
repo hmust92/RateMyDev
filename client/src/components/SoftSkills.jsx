@@ -7,7 +7,7 @@ import React, { Component } from "react";
 
 
 
-const SurveySkill = props => (
+const SoftSkills = props => (
 
    
             <div>
@@ -17,15 +17,15 @@ const SurveySkill = props => (
                     {/* {props.skills.map(skill => <li>{skill.tag} {skill.points}</li>)} */}
 
                     {props.skills.map(skill => ( 
-                        <div key={skill._id}>
+                        <ul key={skill._id}>
                             <p>{skill.tag}</p>
                             <div className="w3-light-grey w3-round-xlarge w3-small">
-                                <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: skill.points}}>{skill.points}/5</div>
+                                <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: skill.points}}>{skill.points}</div>
                             </div>
-                        </div>
+                        </ul>
                     ))}
             </div>            
     
 );
 
-export default SurveySkill;
+export default SoftSkills;

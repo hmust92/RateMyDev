@@ -4,7 +4,8 @@ import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
 import React, { Component } from "react";
 import RadioButton from '../components/QuizRadioButton.jsx';
 
-import SurveySkill from '../components/SurveySkill';
+import TechnicalSkills from '../components/TechnicalSkills.jsx';
+import SoftSkills from '../components/SoftSkills.jsx';
 
 class ProfilePage extends Component {
 
@@ -14,7 +15,8 @@ class ProfilePage extends Component {
     secretData: '',
     user: null,
     tag: "",
-    points: ""
+    points: "",
+    skillType: ""
   };
 
   /**
@@ -33,6 +35,7 @@ class ProfilePage extends Component {
           secretData: xhr.response.message,
           user: xhr.response.user
         });
+
       }
     });
     xhr.send();
@@ -46,9 +49,13 @@ class ProfilePage extends Component {
     this.setState({ points: event.target.value });
   }
 
+  handleSkillTypeChange = (event) => {
+    this.setState({ skillType: event.target.value })
+  }
+
   handleFormSubmit = (event) => {
     event.preventDefault();
-
+  
     // const userData = {
     //   "tag": this.state.tag,
     //   "points": this.state.points
@@ -56,11 +63,14 @@ class ProfilePage extends Component {
 
     const tagYo = this.state.tag;
     const pointsYo = this.state.points;
+    const skillTypeYo = this.state.skillType;
     // const userData = `tag=${tagYo}&points=${pointsYo}`;
 
     const userData = {
       tag: tagYo,
-      points: pointsYo
+      points: pointsYo,
+      skillType: skillTypeYo
+
     }
 
     // console.log({userData)
@@ -94,6 +104,7 @@ class ProfilePage extends Component {
       <SelfSurveyForm
       handleSkillChange={this.handleSkillChange}
       handlePointsChange={this.handlePointsChange}
+      handleSkillTypeChange={this.handleSkillTypeChange}
       handleFormSubmit={this.handleFormSubmit} 
 
       //{var skill= console.log(this.state.user.selfSurveys[0].tag)}
@@ -138,30 +149,12 @@ class ProfilePage extends Component {
             <hr />
             <p className="w3-large"><b><i className="fa fa-laptop fa-fw w3-margin-right w3-text-indigo" />Technical Skills</b></p>
             
-            {this.state.user && <SurveySkill title="Technical Skills" skills={this.state.user.selfSurveys} />}
+            {this.state.user && <TechnicalSkills title="Technical Skills" skills={this.state.user.selfSurveys.filter(word => word.skillType === "Technical")} />}
 
             <br />
-            <p className="w3-large w3-text-theme"><b><i className="fa fa-users fa-fw w3-margin-right w3-text-indigo" />Soft Skills</b></p>
-            <p>Work Ethic</p>
-            <div className="w3-light-grey w3-round-xlarge">
-              <div className="w3-round-xlarge w3-indigo" style={{height: 24, width: '100%'}} />
-            </div>
-            <p>Communication Skills</p>
-            <div className="w3-light-grey w3-round-xlarge">
-              <div className="w3-round-xlarge w3-indigo" style={{height: 24, width: '55%'}} />
-            </div>
-            <p>Creative Problem Solving</p>
-            <div className="w3-light-grey w3-round-xlarge">
-              <div className="w3-round-xlarge w3-indigo" style={{height: 24, width: '55%'}} />
-            </div>
-            <p>Time Management</p>
-            <div className="w3-light-grey w3-round-xlarge">
-              <div className="w3-round-xlarge w3-indigo" style={{height: 24, width: '55%'}} />
-            </div>
-            <p>Ability to Work on a Team</p>
-            <div className="w3-light-grey w3-round-xlarge">
-              <div className="w3-round-xlarge w3-indigo" style={{height: 24, width: '25%'}} />
-            </div>
+
+            {this.state.user && <SoftSkills title="Soft Skills" skills={this.state.user.selfSurveys.filter(word => word.skillType === "Soft")} />}
+
             <br />
           </div>
         </div><br />
