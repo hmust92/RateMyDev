@@ -5,7 +5,7 @@ h1 {
 }
 
 p {
-    font-size: 1.25em;
+    font-size: .85em;
 }
 
 .intro {
@@ -23,28 +23,49 @@ p {
 /* Three columns side by side */
 .column {
     float: left;
-    width: 33.3%;
+    /* width: 33.3%; */
+    width: 19.9%;
     margin-bottom: 16px;
     padding: 0 8px;
 }
 
 /* Display the columns below each other instead of side by side on small screens */
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 850px) {
+    .column {
+        width: 33.3%;
+        display: block;
+    }
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 440px) {
     .column {
         width: 100%;
         display: block;
     }
 }
 
+
+
 /* Add some shadows to create a card effect */
 .card {
+
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: rgb(224, 224, 224); 
+}
+
+.details {
+    min-height: 110px;
+}
+
+.cardsContainer {
+    padding: 18px 18px 18px 18px;
 }
 
 /* Some left and right padding inside the container */
 .container {
     padding: 0 16px;
+    
 }
 
 /* Clear floats */
@@ -52,6 +73,7 @@ p {
     content: "";
     clear: both;
     display: table;
+    
 }
 
 .title {
