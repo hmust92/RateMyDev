@@ -104,58 +104,7 @@ class ProfilePage extends Component {
   <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
   <title>Rate That Dev || Create Your Profile</title> */}
   <h2>Let’s make your Developer Profile!</h2>
-  <form>
-    First name:
-    <input type="text" name="firstname" />
-    <br />
-    Last name:
-    <input type="text" name="lastname" />
-    <br />
-    Email:
-    <input type="text" name="email" />
-    <br />
-    Phone:
-    <input type="text" name="phone" />
-    <br />
-    Zip Code:
-    <input type="text" name="zipcode" />
-    <br />
-    LinkedIn:
-    <input type="text" name="linkedin" />
-    <br />
-    GitHub:
-    <input type="text" name="github" />
-    <br />
-    Willing to relocate?:
-    <input type="radio" name="relocation" />
-    <br />
-    About You: (140 char)<br />
-    <input type="text" name="about" />
-    <br />
-    If your manager asked you to complete a task you thought impossible at first, how would you go about it?:
-    <br /> 
-    <input type="text" name="impossible" />
-    <br />
-    Tell me about a time you missed (or almost missed) a deadline. How did you react when you realized you were falling behind? What did that experience teach you?<br /> 
-    <input type="text" name="deadline" />
-    <br />
-    Do you prefer working in a team or on your own? Why? <br />
-    <input type="text" name="team" />
-    <br />
-    If you could change one thing about your personality at the snap of your fingers what would it be and why? <br />
-    <input type="text" name="personality" />
-    <br />
-    Tell me about a time your manager wasn’t satisfied with the results of your work. How did you discuss the issues and what did you do differently the next time?<br />
-    <input type="text" name="dissatisfaction" />
-    <br />
-    What are you passionate about? (Causes, Activities, Hobbies, etc.)
-    <input type="text" name="passion" />
-    <br />
-
-    <input type="submit" defaultValue="Submit" />
-  </form>
-  {/* <p>Note that the default width of a text input field is 20 characters.</p> */}
-
+ 
       <SelfSurveyForm
       handleSkillChange={this.handleSkillChange}
       handlePointsChange={this.handlePointsChange}
