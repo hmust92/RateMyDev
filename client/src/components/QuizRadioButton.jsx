@@ -1,66 +1,71 @@
-// var React = require('react');
+import React, {Component} from 'react';
 
-// var RadioButton = React.createClass({
-
-//   getInitialState: function () {
-//     return {
-//       selectedOption: 'option1'
-//     };
-//   },
-  
-//   handleOptionChange: function (changeEvent) {
-//     this.setState({
-//       selectedOption: changeEvent.target.value
-//     });
-//   },
-
-//   render: function () {
-//     return ({/* JSX code */});
+class RadioButton extends Component{
+    constructor() {
+        super()    
+    }
     
-//     <form>
-//     <div className="radio">
-//       <label>
-//         <input type="radio" value="option1" checked={this.state.selectedOption === 'option1'} 
-//         onChange={this.handleOptionChange} />/>
-//         Option 1
-//       </label>
-//     </div>
-//     <div className="radio">
-//       <label>
-//         <input type="radio" value="option2" checked={this.state.selectedOption === 'option2'} 
-//         onChange={this.handleOptionChange} />/>
-//         Option 2
-//       </label>
-//     </div>
-//     <div className="radio">
-//       <label>
-//         <input type="radio" value="option3" checked={this.state.selectedOption === 'option3'} 
-//         onChange={this.handleOptionChange} />/>
-//         Option 3
-//       </label>
-//     </div>
-//     <div className="radio">
-//       <label>
-//         <input type="radio" value="option4" checked={this.state.selectedOption === 'option4'} 
-//         onChange={this.handleOptionChange} />/>
-//         Option 4
-//       </label>
-//     </div>
-//     <div className="radio">
-//       <label>
-//         <input type="radio" value="option5" checked={this.state.selectedOption === 'option5'} 
-//         onChange={this.handleOptionChange} />/>
-//         Option 5
-//       </label>
-//     </div>
+  getInitialState = function() {
+    return {
+      selectedOption: 'option1'
+    };
+  }
+  
+  handleOptionChange = function (changeEvent) {
+    this.setState({
+      selectedOption: changeEvent.target.value
+    });
+  }
 
-//     <button class="btn btn-default" type="add">Save</button>
+render () {
+    return (
+    <form>
+     <div className="radio">
+       <label>
+           1
+         <input type="radio" value="option1" checked 
+        onChange={this.handleOptionChange} />
+        
+      </label>
 
-//   </form>
+      <label>
+          2
+         <input type="radio" value="option2"  
+        onChange={this.handleOptionChange} />
+        
+      </label>
 
-//   }
-// });
+      <label>
+          3
+         <input type="radio" value="option3"  
+        onChange={this.handleOptionChange} />
+        
+      </label>
 
-// module.exports = RadioButton;
+      <label>
+          4
+         <input type="radio" value="option4"  
+        onChange={this.handleOptionChange} />
+        
+      </label>
+
+      <label>
+          5
+         <input type="radio" value="option5"  
+        onChange={this.handleOptionChange} />
+        
+      </label>
+    </div>
+ 
+
+    <button class="btn btn-default" type="add">Save</button>
+
+  </form>
+    )
+}
+}
+
+
+export default RadioButton;
 
 

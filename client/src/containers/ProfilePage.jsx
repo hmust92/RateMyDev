@@ -109,6 +109,7 @@ class ProfilePage extends Component {
 
       //{var skill= console.log(this.state.user.selfSurveys[0].tag)}
       />
+      <RadioButton />
 
       <div>
         {/* {this.state.user && <SurveySkill title="Technical Skills" skills={this.state.user.selfSurveys} />} */}
