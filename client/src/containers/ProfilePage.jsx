@@ -4,6 +4,7 @@ import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
 import React, { Component } from "react";
 import RadioButton from '../components/QuizRadioButton.jsx';
 
+import SurveySkill from '../components/SurveySkill';
 
 class ProfilePage extends Component {
 
@@ -11,7 +12,7 @@ class ProfilePage extends Component {
 
   state = {
     secretData: '',
-    user: {},
+    user: null,
     tag: "",
     points: ""
   };
@@ -86,6 +87,9 @@ class ProfilePage extends Component {
    */
    render() {
     return (
+
+
+      
       <div>
       <SelfSurveyForm
       handleSkillChange={this.handleSkillChange}
@@ -94,6 +98,12 @@ class ProfilePage extends Component {
 
       //{var skill= console.log(this.state.user.selfSurveys[0].tag)}
       />
+
+      <div>
+        {/* {this.state.user && <SurveySkill title="Technical Skills" skills={this.state.user.selfSurveys} />} */}
+
+
+      </div>
 
 
         <div>
@@ -127,24 +137,9 @@ class ProfilePage extends Component {
             <p><i className="fa fa-phone fa-fw w3-margin-right w3-large w3-text-indigo" />2145555555</p>
             <hr />
             <p className="w3-large"><b><i className="fa fa-laptop fa-fw w3-margin-right w3-text-indigo" />Technical Skills</b></p>
-            <p>Javascript</p>
-            <div className="w3-light-grey w3-round-xlarge w3-small">
-              <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: '90%'}}>90%</div>
-            </div>
-            <p>HTML</p>
-            <div className="w3-light-grey w3-round-xlarge w3-small">
-              <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: '80%'}}>
-                <div className="w3-center w3-text-white">80%</div>
-              </div>
-            </div>
-            <p>CSS</p>
-            <div className="w3-light-grey w3-round-xlarge w3-small">
-              <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: '75%'}}>75%</div>
-            </div>
-            <p>Node.js</p>
-            <div className="w3-light-grey w3-round-xlarge w3-small">
-              <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: '50%'}}>50%</div>
-            </div>
+            
+            {this.state.user && <SurveySkill title="Technical Skills" skills={this.state.user.selfSurveys} />}
+
             <br />
             <p className="w3-large w3-text-theme"><b><i className="fa fa-users fa-fw w3-margin-right w3-text-indigo" />Soft Skills</b></p>
             <p>Work Ethic</p>
