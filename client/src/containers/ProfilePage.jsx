@@ -1,19 +1,13 @@
 import axios from 'axios';
 import Auth from '../modules/Auth';
-//import Dashboard from '../components/Dashboard.jsx';
-// import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
+//import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
 import React, { Component } from "react";
-import RadioButton from '../components/QuizRadioButton.jsx';
-
 import TechnicalSkills from '../components/TechnicalSkills.jsx';
 import SoftSkills from '../components/SoftSkills.jsx';
 import Modal from '../components/Modal.jsx';
 import '../css/Main.css';
 
 class ProfilePage extends Component {
-
-
-
   state = {
     secretData: '',
     user: null,
@@ -31,21 +25,15 @@ class ProfilePage extends Component {
     this.setState({ show: false });
   };
 
-
-// simple test
-
-
   /**
    * This method will be executed after initial rendering.
    */
    componentDidMount() {
     console.log(this.props)
     this.loadData()
-
   }
 
   loadData = () => {
-
     axios.get(`/api/${this.props.match.params.userId}`,
     {
       headers: {
@@ -58,8 +46,8 @@ class ProfilePage extends Component {
         user: response.data.user,
       });
     })
-
   }
+
 
   handleSkillChange = (event) => {
     this.setState({ tag: event.target.value });
@@ -73,6 +61,7 @@ class ProfilePage extends Component {
     this.setState({ skillType: event.target.value })
   }
 
+
   handleFormSubmit = (event) => {
     event.preventDefault();
 
@@ -85,7 +74,6 @@ class ProfilePage extends Component {
       tag: tagYo,
       points: pointsYo,
       skillType: skillTypeYo
-
     }
 
     let axiosConfig = {
@@ -96,16 +84,13 @@ class ProfilePage extends Component {
     };
 
     // console.log({userData)
-
-      axios.post('/api/me/survey', userData, axiosConfig)
+    axios.post('/api/me/survey', userData, axiosConfig)
       .then((res) => {
         this.loadData()
       })
       .catch((err) => {
         console.log("AXIOS ERROR: ", err);
       })
-
-
   }
 
 
@@ -115,55 +100,52 @@ class ProfilePage extends Component {
   render() {
     return (
 
-<div>
-      <main>
-        <h1>React Modal</h1>
-        <Modal show={this.state.show} handleClose={this.hideModal}
+      <div>
+        <main>
+          <h1>React Modal</h1>
+
+          <Modal 
+            show={this.state.show} 
+            handleClose={this.hideModal}
+            handleSkillChange={this.handleSkillChange}
+            handlePointsChange={this.handlePointsChange}
+            handleSkillTypeChange={this.handleSkillTypeChange}
+            handleFormSubmit={this.handleFormSubmit}>
+          
+            <p>Modal</p>
+            <p>Data</p>
+
+          </Modal> 
+
+          <button type="button" onClick={this.showModal}>Rate Myself</button>
+      
+        </main>
+
+
+        {/* <div>
+        <SelfSurveyForm
         handleSkillChange={this.handleSkillChange}
         handlePointsChange={this.handlePointsChange}
         handleSkillTypeChange={this.handleSkillTypeChange}
-        handleFormSubmit={this.handleFormSubmit}>
-        
-          <p>Modal</p>
-          <p>Data</p>
-
-        </Modal>
-        <button type="button" onClick={this.showModal}>
-          Rate Myself
-            </button>
-      </main>
-
-
-      {/* <div>
-      <SelfSurveyForm
-      handleSkillChange={this.handleSkillChange}
-      handlePointsChange={this.handlePointsChange}
-      handleSkillTypeChange={this.handleSkillTypeChange}
-      handleFormSubmit={this.handleFormSubmit}  */}
-
-
-      <div>
-
-
-        {/* {var skill= console.log(this.state.user.selfSurveys[0].tag)} */}
-        
-        <RadioButton />
-      
-        <div>
-          {/* {this.state.user && <SurveySkill title="Technical Skills" skills={this.state.user.selfSurveys} />} */}
-
-
-        </div>
-
+        handleFormSubmit={this.handleFormSubmit}  */}
 
         <div>
-          <title>Profile</title>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-          <style dangerouslySetInnerHTML={{ __html: "\nhtml,body,h1,h2,h3,h4,h5,h6 {font-family: \"Roboto\", sans-serif}\n" }} />
+
+          {/* {var skill= console.log(this.state.user.selfSurveys[0].tag)} */}
+              
+          <div>
+            {/* {this.state.user && <SurveySkill title="Technical Skills" skills={this.state.user.selfSurveys} />} */}
+          </div>
+
+          <div>
+            <title>Profile</title>
+              <meta charSet="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+              <style dangerouslySetInnerHTML={{ __html: "\nhtml,body,h1,h2,h3,h4,h5,h6 {font-family: \"Roboto\", sans-serif}\n" }} />
+          
           {/* Page Container */}
           <div className="w3-content w3-margin-top" style={{ maxWidth: 1400 }}>
             {/* The Grid */}
