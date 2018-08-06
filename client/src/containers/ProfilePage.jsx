@@ -11,6 +11,15 @@ class ProfilePage extends Component {
   state = {
     secretData: '',
     user: null,
+    firstName: null,
+    lastName: null,
+    profilePicURL: null,
+    phoneNumber: null,
+    zipcode: null,
+    relocation: null,
+    linkedInURL: null,
+    githubURL: null,
+    aboutYou: null,
     tag: "",
     points: "",
     skillType: "",
@@ -49,32 +58,115 @@ class ProfilePage extends Component {
   }
 
 
+  handleFirstNameChange = (event) => {
+    // event.preventDefault();
+    this.setState({ firstName: event.target.value });
+  }
+
+  handleLastNameChange = (event) => {
+    // event.preventDefault();
+    this.setState({ lastName: event.target.value });
+  }
+
+  handleProfilePicChange = (event) => {
+    // event.preventDefault();
+    this.setState({ profilePicURL: event.target.value });
+  }
+
+  handlePhoneChange = (event) => {
+    // event.preventDefault();
+    this.setState({ phoneNumber: event.target.value });
+  }
+
+  handleZipcodeChange = (event) => {
+    // event.preventDefault();
+    this.setState({ zipcode: event.target.value });
+  }
+
+  handleRelocationChange = (event) => {
+    // event.preventDefault();
+    this.setState({ relocation: event.target.value });
+  }
+
+  handleLinkedInChange = (event) => {
+    // event.preventDefault();
+    this.setState({ linkedInURL: event.target.value });
+  }
+
+  handleGithubChange = (event) => {
+    // event.preventDefault();
+    this.setState({ githubURL: event.target.value });
+  }
+
+  handleAboutYouChange = (event) => {
+    // event.preventDefault();
+    this.setState({ aboutYou: event.target.value });
+  }
+
   handleSkillChange = (event) => {
-    this.setState({ tag: event.target.value });
+    // event.preventDefault();
+    if(event.target.value) {
+      this.setState({ tag: event.target.value });
+    }
   }
 
   handlePointsChange = (event) => {
-    this.setState({ points: event.target.value });
+    // event.preventDefault();
+    if(event.target.value) {
+      this.setState({ points: event.target.value });
+    }
   }
 
   handleSkillTypeChange = (event) => {
-    this.setState({ skillType: event.target.value })
+    // event.preventDefault();
+    if(event.target.value) {
+      this.setState({ skillType: event.target.value });
+    }
   }
 
 
   handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const tagYo = this.state.tag;
-    const pointsYo = this.state.points;
-    const skillTypeYo = this.state.skillType;
+    // const tagYo = this.state.tag;
+    // const pointsYo = this.state.points;
+    // const skillTypeYo = this.state.skillType;
+    // const firstNameYo = this.state.firstName; 
+    
+
+
+    // if(this.state.firstName) {
+    //   firstNameYo = this.state.firstName;
+    // }
     // const userData = `tag=${tagYo}&points=${pointsYo}`;
 
+    // const userData = {
+    //   tag: tagYo,
+    //   points: pointsYo,
+    //   skillType: skillTypeYo,
+    //   firstName: firstNameYo
+
+    // }
+
     const userData = {
-      tag: tagYo,
-      points: pointsYo,
-      skillType: skillTypeYo
+      tag: this.state.tag,
+      points: this.state.points,
+      skillType: this.state.skillType,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      profilePicURL: this.state.profilePicURL,
+      phoneNumber: this.state.phoneNumber,
+      zipcode: this.state.zipcode,
+      relocation: this.state.relocation,
+      linkedInURL: this.state.linkedInURL,
+      githubURL: this.state.githubURL,
+      aboutYou: this.state.aboutYou,
     }
+
+    // const userDemoData = {
+    //   firstName: firstNameYo
+
+    // }
 
     let axiosConfig = {
       headers: {
@@ -91,6 +183,15 @@ class ProfilePage extends Component {
       .catch((err) => {
         console.log("AXIOS ERROR: ", err);
       })
+
+
+    // axios.post('/auth/login', userDemoData, axiosConfig)  
+    //   .then((res) => {
+    //     this.loadData()
+    //   })
+    //   .catch((err) => {
+    //     console.log("AXIOS ERROR: ", err);
+    //   })  
   }
 
 
@@ -102,19 +203,31 @@ class ProfilePage extends Component {
 
       <div>
         <main>
-          <h1>React Modal</h1>
+          <h1>Profile Page</h1>
 
           <Modal 
             show={this.state.show} 
             handleClose={this.hideModal}
+            handleFirstNameChange={this.handleFirstNameChange}
+            handleLastNameChange={this.handleLastNameChange}
+            handleProfilePicChange={this.handleProfilePicChange}
+            handlePhoneChange={this.handlePhoneChange}
+            handleZipcodeChange={this.handleZipcodeChange}
+            handleRelocationChange={this.handleRelocationChange}
+            handleLinkedInChange={this.handleLinkedInChange}
+            handleGithubChange={this.handleGithubChange}
+            handleAboutYouChange={this.handleAboutYouChange}
+
             handleSkillChange={this.handleSkillChange}
             handlePointsChange={this.handlePointsChange}
             handleSkillTypeChange={this.handleSkillTypeChange}
             handleFormSubmit={this.handleFormSubmit}>
           
-           <div>
-             <h1>Rate That Dev</h1>
-            </div>
+            {/* <p>Modal</p> */}
+            <h4>Let’s make your profile right quick!</h4>
+            {/* <p>Data</p> */}
+           
+
           </Modal> 
 
           <button type="button" onClick={this.showModal}>Rate Myself</button>
@@ -173,6 +286,9 @@ class ProfilePage extends Component {
                     {this.state.user && <TechnicalSkills title="Technical Skills" skills={this.state.user.selfSurveys.filter(word => word.skillType === "Technical")} />}
 
                     <br />
+
+                    <p className="w3-large"><b><i className="fa fa-handshake-o fa-fw w3-margin-right w3-text-indigo" />Soft Skills</b></p>
+
 
                     {this.state.user && <SoftSkills title="Soft Skills" skills={this.state.user.selfSurveys.filter(word => word.skillType === "Soft")} />}
 

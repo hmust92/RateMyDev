@@ -7,6 +7,7 @@ import TextField from 'material-ui/TextField';
 
 
 
+
 const LoginForm = ({
   onSubmit,
   onChange,
@@ -44,7 +45,7 @@ const LoginForm = ({
       </div>
 
       <div className="button-line">
-        <RaisedButton type="submit" label="Log in" primary />
+        <RaisedButton type="submit" label="Log in" backgroundColor={121e9} />
       </div>
 
       <CardText>Don't have an account? <Link to={'/signup'}>Create one</Link>.</CardText>

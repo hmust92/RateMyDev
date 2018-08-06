@@ -6,15 +6,11 @@ import Col from "../components/davidcomponents/Col";
 import '../css/HomePage.css';
 
 import {
-    BrowserRouter as Router,
     Link, 
-    Route, 
-    Switch, 
-    Redirect
 } from 'react-router-dom'
 
-import ProfilePage from "./ProfilePage.jsx";
-import Search from "./Search.jsx";
+//import ProfilePage from "./ProfilePage.jsx";
+//import Search from "./Search.jsx";
 
 
 const HomePage = () => (
