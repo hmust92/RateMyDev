@@ -69,9 +69,10 @@ const Modal = (props) => {
                                   <span className="input-group-text">Willing to Relocate?</span>
                               </div>
                               <select className="form-control" onChange={props.handleRelocationChange} type="text" id="Relocation">
+                                <option disabled selected value> -- Select an Option -- </option>
                                 <option value="Maybe">Maybe</option>
                                 <option value="Yes">Yes</option>
-			                          <option value="No">No</option>
+			                    <option value="No">No</option>
                               </select>
                           </div>
                       </div>
@@ -117,7 +118,7 @@ const Modal = (props) => {
                               <div className="input-group-prepend">
                                   <span className="input-group-text">Technical Skill</span>
                               </div>
-                              <input onChange={props.handleSkillChange} type="text" className="form-control" id="Skill"/>
+                              <input onChange={props.handleTechnicalSkillChange} type="text" className="form-control" id="Skill"/>
                           </div>
                       </div>
 
@@ -126,8 +127,9 @@ const Modal = (props) => {
                               <div className="input-group-prepend">
                                   <span className="input-group-text">Points</span>
                               </div>
-                              <select className="form-control" onChange={props.handlePointsChange} type="text" id="Points">
-                                <option value="0">0 = (Default) Declined to Answer / Don’t Use at All</option>
+                              <select className="form-control" onChange={props.handleTechnicalPointsChange} type="text" id="Points">
+                                <option disabled selected value> -- Select an Option -- </option>
+                                {/* <option value="0">0 = (Default) Declined to Answer / Don’t Use at All</option> */}
                                 <option value="1">1 = Exposure to this Technology</option>
                                 <option value="2">2 = Could Effectively Perform a Junior-Level Job using this Technology</option>
                                 <option value="3">3 = Could Effectively Perform a Mid-Level Job using this Technology</option>
@@ -145,6 +147,7 @@ const Modal = (props) => {
                                   <span className="input-group-text">Soft Skill</span>
                               </div>
                               <select className="form-control" onChange={props.handleSoftSkillChange} type="text" id="SoftSkill">
+                                <option disabled selected value> -- Select an Option -- </option>
                                 <option value="Work Ethic">Work Ethic</option>
                                 <option value="Communication Skills">Communication Skills</option>
                                 <option value="Creative Problem Solving">Creative Problem Solving</option>
@@ -160,7 +163,8 @@ const Modal = (props) => {
                                   <span className="input-group-text">Rating</span>
                               </div>
                               <select className="form-control" onChange={props.handleSoftPointsChange} type="text" id="SoftPoints">
-                                <option value="0">0</option>
+                                <option disabled selected value> -- Select an Option -- </option>
+                                {/* <option value="0">0</option> */}
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -169,16 +173,7 @@ const Modal = (props) => {
                               </select>
                           </div>
                       </div>
-                    </div>
-
-                    <div className="row">
-                      <div className="col-md-10 offset-md-1">
-                          <div className="form-group">
-                            <label htmlFor="Points">Skill Type</label>
-                            <input onChange={props.handleSkillTypeChange} type="text" className="form-control" id="SkillType" />
-                          </div>
-                      </div>    
-                    </div>      
+                    </div>    
 
                     <br/>
                     <br/>

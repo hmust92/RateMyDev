@@ -20,9 +20,12 @@ class ProfilePage extends Component {
     linkedInURL: null,
     githubURL: null,
     aboutYou: null,
-    tag: "",
-    points: "",
-    skillType: "",
+    technicalTag: "",
+    technicalPoints: "",
+    techSkillType: "",
+    softTag: "",
+    softPoints: "",
+    softSkillType: "",
     show: false
   };
 
@@ -103,26 +106,43 @@ class ProfilePage extends Component {
     this.setState({ aboutYou: event.target.value });
   }
 
-  handleSkillChange = (event) => {
+  
+  handleTechnicalSkillChange = (event) => {
     // event.preventDefault();
     if(event.target.value) {
-      this.setState({ tag: event.target.value });
+      this.setState({ 
+        technicalTag: event.target.value,
+        techSkillType: "Technical"
+      });
     }
   }
 
-  handlePointsChange = (event) => {
+  handleTechnicalPointsChange = (event) => {
     // event.preventDefault();
     if(event.target.value) {
-      this.setState({ points: event.target.value });
+      this.setState({ technicalPoints: event.target.value });
     }
   }
 
-  handleSkillTypeChange = (event) => {
+
+  handleSoftSkillChange = (event) => {
     // event.preventDefault();
     if(event.target.value) {
-      this.setState({ skillType: event.target.value });
+      this.setState({ 
+        softTag: event.target.value,
+        softSkillType: "Soft"
+      });
     }
   }
+
+  handleSoftPointsChange = (event) => {
+    // event.preventDefault();
+    if(event.target.value) {
+      this.setState({ softPoints: event.target.value });
+    }
+  }
+
+  
 
 
   handleFormSubmit = (event) => {
@@ -149,9 +169,12 @@ class ProfilePage extends Component {
     // }
 
     const userData = {
-      tag: this.state.tag,
-      points: this.state.points,
-      skillType: this.state.skillType,
+      technicalTag: this.state.technicalTag,
+      technicalPoints: this.state.technicalPoints,
+      techSkillType: this.state.techSkillType,
+      softTag: this.state.softTag,
+      softPoints: this.state.softPoints,
+      softSkillType: this.state.softSkillType,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       profilePicURL: this.state.profilePicURL,
@@ -203,7 +226,7 @@ class ProfilePage extends Component {
 
       <div>
         <main>
-          <h1>React Modal</h1>
+          {/* <h1>React Modal</h1> */}
 
           <Modal 
             show={this.state.show} 
@@ -218,13 +241,14 @@ class ProfilePage extends Component {
             handleGithubChange={this.handleGithubChange}
             handleAboutYouChange={this.handleAboutYouChange}
 
-            handleSkillChange={this.handleSkillChange}
-            handlePointsChange={this.handlePointsChange}
-            handleSkillTypeChange={this.handleSkillTypeChange}
+            handleTechnicalSkillChange={this.handleTechnicalSkillChange}
+            handleTechnicalPointsChange={this.handleTechnicalPointsChange}
+
+            handleSoftSkillChange={this.handleSoftSkillChange}
+            handleSoftPointsChange={this.handleSoftPointsChange}
+
+
             handleFormSubmit={this.handleFormSubmit}>
-          
-            <p>Modal</p>
-            <p>Data</p>
 
           </Modal> 
 
@@ -281,11 +305,13 @@ class ProfilePage extends Component {
                     <hr />
                     <p className="w3-large"><b><i className="fa fa-laptop fa-fw w3-margin-right w3-text-indigo" />Technical Skills</b></p>
 
-                    {this.state.user && <TechnicalSkills title="Technical Skills" skills={this.state.user.selfSurveys.filter(word => word.skillType === "Technical")} />}
+                    {this.state.user && <TechnicalSkills title="Technical Skills" skills={this.state.user.selfSurveys.filter(word => word.techSkillType === "Technical")} />}
+                    {/* {this.state.user && <TechnicalSkills title="Technical Skills" skills={this.state.user.selfSurveys} />} */}
+
 
                     <br />
 
-                    {this.state.user && <SoftSkills title="Soft Skills" skills={this.state.user.selfSurveys.filter(word => word.skillType === "Soft")} />}
+                    {this.state.user && <SoftSkills title="Soft Skills" skills={this.state.user.selfSurveys.filter(word => word.softSkillType === "Soft")} />}
 
                     <br />
                   </div>

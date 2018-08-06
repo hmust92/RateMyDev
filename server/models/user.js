@@ -10,9 +10,12 @@ var surveySchema = new Schema({
     
   },
 
-  tag: {type: String}, 
-  points: {type: Number},
-  skillType: {type: String},
+  technicalTag: {type: String}, 
+  technicalPoints: {type: Number},
+  techSkillType: {type: String},
+  softTag: {type: String}, 
+  softPoints: {type: Number},
+  softSkillType: {type: String},
 
 })
 
