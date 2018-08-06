@@ -174,6 +174,9 @@ class ProfilePage extends Component {
 
                     <br />
 
+                    <p className="w3-large"><b><i className="fa fa-handshake-o fa-fw w3-margin-right w3-text-indigo" />Soft Skills</b></p>
+
+
                     {this.state.user && <SoftSkills title="Soft Skills" skills={this.state.user.selfSurveys.filter(word => word.skillType === "Soft")} />}
 
                     <br />
