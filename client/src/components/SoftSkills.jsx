@@ -1,7 +1,7 @@
-import Auth from '../modules/Auth';
+// import Auth from '../modules/Auth';
 //import Dashboard from '../components/Dashboard.jsx';
 //import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
-import React, { Component } from "react";
+import React from "react";
 
 
 

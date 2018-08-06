@@ -1,22 +1,25 @@
 import axios from 'axios';
 import Auth from '../modules/Auth';
-//import Dashboard from '../components/Dashboard.jsx';
-// import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
+//import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
 import React, { Component } from "react";
-import RadioButton from '../components/QuizRadioButton.jsx';
-
 import TechnicalSkills from '../components/TechnicalSkills.jsx';
 import SoftSkills from '../components/SoftSkills.jsx';
 import Modal from '../components/Modal.jsx';
 import '../css/Main.css';
 
 class ProfilePage extends Component {
-
-
-
   state = {
     secretData: '',
     user: null,
+    firstName: null,
+    lastName: null,
+    profilePicURL: null,
+    phoneNumber: null,
+    zipcode: null,
+    relocation: null,
+    linkedInURL: null,
+    githubURL: null,
+    aboutYou: null,
     tag: "",
     points: "",
     skillType: "",
@@ -31,21 +34,15 @@ class ProfilePage extends Component {
     this.setState({ show: false });
   };
 
-
-
-
-
   /**
    * This method will be executed after initial rendering.
    */
    componentDidMount() {
     console.log(this.props)
     this.loadData()
-
   }
 
   loadData = () => {
-
     axios.get(`/api/${this.props.match.params.userId}`,
     {
       headers: {
@@ -58,35 +55,118 @@ class ProfilePage extends Component {
         user: response.data.user,
       });
     })
+  }
 
+
+  handleFirstNameChange = (event) => {
+    // event.preventDefault();
+    this.setState({ firstName: event.target.value });
+  }
+
+  handleLastNameChange = (event) => {
+    // event.preventDefault();
+    this.setState({ lastName: event.target.value });
+  }
+
+  handleProfilePicChange = (event) => {
+    // event.preventDefault();
+    this.setState({ profilePicURL: event.target.value });
+  }
+
+  handlePhoneChange = (event) => {
+    // event.preventDefault();
+    this.setState({ phoneNumber: event.target.value });
+  }
+
+  handleZipcodeChange = (event) => {
+    // event.preventDefault();
+    this.setState({ zipcode: event.target.value });
+  }
+
+  handleRelocationChange = (event) => {
+    // event.preventDefault();
+    this.setState({ relocation: event.target.value });
+  }
+
+  handleLinkedInChange = (event) => {
+    // event.preventDefault();
+    this.setState({ linkedInURL: event.target.value });
+  }
+
+  handleGithubChange = (event) => {
+    // event.preventDefault();
+    this.setState({ githubURL: event.target.value });
+  }
+
+  handleAboutYouChange = (event) => {
+    // event.preventDefault();
+    this.setState({ aboutYou: event.target.value });
   }
 
   handleSkillChange = (event) => {
-    this.setState({ tag: event.target.value });
+    // event.preventDefault();
+    if(event.target.value) {
+      this.setState({ tag: event.target.value });
+    }
   }
 
   handlePointsChange = (event) => {
-    this.setState({ points: event.target.value });
+    // event.preventDefault();
+    if(event.target.value) {
+      this.setState({ points: event.target.value });
+    }
   }
 
   handleSkillTypeChange = (event) => {
-    this.setState({ skillType: event.target.value })
+    // event.preventDefault();
+    if(event.target.value) {
+      this.setState({ skillType: event.target.value });
+    }
   }
+
 
   handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const tagYo = this.state.tag;
-    const pointsYo = this.state.points;
-    const skillTypeYo = this.state.skillType;
+    // const tagYo = this.state.tag;
+    // const pointsYo = this.state.points;
+    // const skillTypeYo = this.state.skillType;
+    // const firstNameYo = this.state.firstName; 
+    
+
+
+    // if(this.state.firstName) {
+    //   firstNameYo = this.state.firstName;
+    // }
     // const userData = `tag=${tagYo}&points=${pointsYo}`;
 
-    const userData = {
-      tag: tagYo,
-      points: pointsYo,
-      skillType: skillTypeYo
+    // const userData = {
+    //   tag: tagYo,
+    //   points: pointsYo,
+    //   skillType: skillTypeYo,
+    //   firstName: firstNameYo
 
+    // }
+
+    const userData = {
+      tag: this.state.tag,
+      points: this.state.points,
+      skillType: this.state.skillType,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      profilePicURL: this.state.profilePicURL,
+      phoneNumber: this.state.phoneNumber,
+      zipcode: this.state.zipcode,
+      relocation: this.state.relocation,
+      linkedInURL: this.state.linkedInURL,
+      githubURL: this.state.githubURL,
+      aboutYou: this.state.aboutYou,
     }
+
+    // const userDemoData = {
+    //   firstName: firstNameYo
+
+    // }
 
     let axiosConfig = {
       headers: {
@@ -96,8 +176,7 @@ class ProfilePage extends Component {
     };
 
     // console.log({userData)
-
-      axios.post('/api/me/survey', userData, axiosConfig)
+    axios.post('/api/me/survey', userData, axiosConfig)
       .then((res) => {
         this.loadData()
       })
@@ -106,6 +185,13 @@ class ProfilePage extends Component {
       })
 
 
+    // axios.post('/auth/login', userDemoData, axiosConfig)  
+    //   .then((res) => {
+    //     this.loadData()
+    //   })
+    //   .catch((err) => {
+    //     console.log("AXIOS ERROR: ", err);
+    //   })  
   }
 
 
@@ -115,55 +201,62 @@ class ProfilePage extends Component {
   render() {
     return (
 
-<div>
-      <main>
-        <h1>React Modal</h1>
-        <Modal show={this.state.show} handleClose={this.hideModal}
+      <div>
+        <main>
+          <h1>React Modal</h1>
+
+          <Modal 
+            show={this.state.show} 
+            handleClose={this.hideModal}
+            handleFirstNameChange={this.handleFirstNameChange}
+            handleLastNameChange={this.handleLastNameChange}
+            handleProfilePicChange={this.handleProfilePicChange}
+            handlePhoneChange={this.handlePhoneChange}
+            handleZipcodeChange={this.handleZipcodeChange}
+            handleRelocationChange={this.handleRelocationChange}
+            handleLinkedInChange={this.handleLinkedInChange}
+            handleGithubChange={this.handleGithubChange}
+            handleAboutYouChange={this.handleAboutYouChange}
+
+            handleSkillChange={this.handleSkillChange}
+            handlePointsChange={this.handlePointsChange}
+            handleSkillTypeChange={this.handleSkillTypeChange}
+            handleFormSubmit={this.handleFormSubmit}>
+          
+            <p>Modal</p>
+            <p>Data</p>
+
+          </Modal> 
+
+          <button type="button" onClick={this.showModal}>Rate Myself</button>
+      
+        </main>
+
+
+        {/* <div>
+        <SelfSurveyForm
         handleSkillChange={this.handleSkillChange}
         handlePointsChange={this.handlePointsChange}
         handleSkillTypeChange={this.handleSkillTypeChange}
-        handleFormSubmit={this.handleFormSubmit}>
-        
-          <p>Modal</p>
-          <p>Data</p>
-
-        </Modal>
-        <button type="button" onClick={this.showModal}>
-          Rate Myself
-            </button>
-      </main>
-
-
-      {/* <div>
-      <SelfSurveyForm
-      handleSkillChange={this.handleSkillChange}
-      handlePointsChange={this.handlePointsChange}
-      handleSkillTypeChange={this.handleSkillTypeChange}
-      handleFormSubmit={this.handleFormSubmit}  */}
-
-
-      <div>
-
-
-        {/* {var skill= console.log(this.state.user.selfSurveys[0].tag)} */}
-        
-        <RadioButton />
-      
-        <div>
-          {/* {this.state.user && <SurveySkill title="Technical Skills" skills={this.state.user.selfSurveys} />} */}
-
-
-        </div>
-
+        handleFormSubmit={this.handleFormSubmit}  */}
 
         <div>
-          <title>Profile</title>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-          <style dangerouslySetInnerHTML={{ __html: "\nhtml,body,h1,h2,h3,h4,h5,h6 {font-family: \"Roboto\", sans-serif}\n" }} />
+
+          {/* {var skill= console.log(this.state.user.selfSurveys[0].tag)} */}
+              
+          <div>
+            {/* {this.state.user && <SurveySkill title="Technical Skills" skills={this.state.user.selfSurveys} />} */}
+          </div>
+
+          <div>
+            <title>Profile</title>
+              <meta charSet="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+              <style dangerouslySetInnerHTML={{ __html: "\nhtml,body,h1,h2,h3,h4,h5,h6 {font-family: \"Roboto\", sans-serif}\n" }} />
+          
           {/* Page Container */}
           <div className="w3-content w3-margin-top" style={{ maxWidth: 1400 }}>
             {/* The Grid */}
