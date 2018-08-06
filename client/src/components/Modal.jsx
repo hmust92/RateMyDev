@@ -252,7 +252,7 @@ const Modal = (props) => {
             </div> */}
           </div>
 
-          <button onClick={props.handleClose}>close</button>
+          <button type="button" onClick={props.handleClose}>close</button>
           
         </section>
       </div>
