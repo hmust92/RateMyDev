@@ -11,7 +11,6 @@ import {
   Route,
   Link,
   Redirect,
-  Switch
   //withRouter
 } from 'react-router-dom'
 
