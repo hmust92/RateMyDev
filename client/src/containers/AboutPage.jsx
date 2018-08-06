@@ -1,6 +1,8 @@
-import React from "react";
-import Auth from "../modules/Auth";
-import "../css/About.css";
+ 
+import React from 'react';
+//import Auth from '../modules/Auth';
+import '../css/About.css';
+ 
 //import Dashboard from '../components/Dashboard.jsx';
 
 class AboutPage extends React.Component {
