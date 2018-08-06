@@ -112,9 +112,9 @@ class ProfilePage extends Component {
             handleSkillTypeChange={this.handleSkillTypeChange}
             handleFormSubmit={this.handleFormSubmit}>
           
-            <p>Modal</p>
-            <p>Data</p>
-
+           <div>
+             <h1>Rate That Dev</h1>
+            </div>
           </Modal> 
 
           <button type="button" onClick={this.showModal}>Rate Myself</button>

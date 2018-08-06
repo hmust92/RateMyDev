@@ -13,13 +13,17 @@ const Modal = (props) => {
               <div className="col-lg-12"> */}
 
                   <form>
+                  <div class="modal-header">
+                    About Me
+                    <button onClick={props.handleClose} type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
                     <div class="row">
                       <div class="col-md-5 offset-md-1">
                           <div class="input-group mb-3">
                               <div class="input-group-prepend">
                                   <span class="input-group-text">First Name</span>
                               </div>
-                              <input onChange={props.handleFirstNameChange} type="text" placeholder="Enter your first name" class="form-control" id="FirstName"/>
+                              <input onChange={props.handleFirstNameChange} type="text" placeholder="First name" class="form-control" id="FirstName"/>
                           </div>
                       </div>
 
@@ -28,7 +32,7 @@ const Modal = (props) => {
                               <div class="input-group-prepend">
                                   <span class="input-group-text">Last Name</span>
                               </div>
-                              <input onChange={props.handleLastNameChange} type="text" placeholder="Enter your last name" class="form-control" id="LastName"/>
+                              <input onChange={props.handleLastNameChange} type="text" placeholder="Last name" class="form-control" id="LastName"/>
                           </div>
                       </div>
                     </div>
@@ -249,6 +253,7 @@ const Modal = (props) => {
           </div>
 
           <button onClick={props.handleClose}>close</button>
+          
         </section>
       </div>
     );
