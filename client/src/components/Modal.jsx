@@ -160,12 +160,12 @@ const Modal = (props) => {
                                   <span class="input-group-text">Rating</span>
                               </div>
                               <select class="form-control" onChange={props.handleSoftPointsChange} type="text" class="form-control" id="SoftPoints">
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                                <option value="0">0 = declined to answer</option>
+                                <option value="1">1 = not strong at all</option>
+                                <option value="2">2 = weak</option>
+                                <option value="3">3 = average</option>
+                                <option value="4">4 = above average</option>
+                                <option value="5">5 = absolute rockstar</option>
                               </select>
                           </div>
                       </div>
