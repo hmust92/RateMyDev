@@ -103,7 +103,7 @@ const Modal = (props) => {
                               <div className="input-group-prepend">
                                   <span className="input-group-text">About You</span>
                               </div>
-                              <textarea onChange={props.handleAboutYouChange} className="form-control" cols="40" id="AboutYou" type="text" rows="10"></textarea>
+                              <textarea onChange={props.handleAboutYouChange} className="form-control" cols="40" id="AboutYou" type="text" rows="5"></textarea>
                           </div>
                       </div>
                     </div>               

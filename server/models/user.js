@@ -26,6 +26,14 @@ const UserSchema = new mongoose.Schema({
   name: String,
   selfSurveys: [surveySchema],
   firstName: String,
+  lastName: String,
+  profilePicURL: String,
+  phoneNumber: String,
+  zipcode: String, 
+  relocation: String,
+  linkedInURL: String,
+  githubURL: String,
+  aboutYou: String,
   averageRating: {
       tag: {type: String}, //new object pushed with recalculated values 
       points: {type: Number} //Decimal??
