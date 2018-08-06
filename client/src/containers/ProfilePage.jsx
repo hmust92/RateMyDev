@@ -203,7 +203,7 @@ class ProfilePage extends Component {
 
       <div>
         <main>
-          <h1>React Modal</h1>
+          <h1>Profile Page</h1>
 
           <Modal 
             show={this.state.show} 
@@ -223,8 +223,10 @@ class ProfilePage extends Component {
             handleSkillTypeChange={this.handleSkillTypeChange}
             handleFormSubmit={this.handleFormSubmit}>
           
-            <p>Modal</p>
-            <p>Data</p>
+            {/* <p>Modal</p> */}
+            <h4>Let’s make your profile right quick!</h4>
+            {/* <p>Data</p> */}
+           
 
           </Modal> 
 

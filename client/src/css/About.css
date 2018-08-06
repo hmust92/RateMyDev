@@ -1,3 +1,7 @@
+a:visited { 
+    color: rgb(127, 83, 127);
+}
+
 h1 {
     text-align: center;
     margin: 10px;
@@ -10,9 +14,7 @@ p {
 
 .intro {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background: #00d2ff; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #009ec1, #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #009ec1, #3a7bd5);
+    background: rgb(185, 185, 185);
     margin: 10px;
     padding: 8px 8px 8px 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -23,8 +25,8 @@ p {
 /* Three columns side by side */
 .column {
     float: left;
-    /* width: 33.3%; */
     width: 19.9%;
+    min-width: 246px;
     margin-bottom: 16px;
     padding: 0 8px;
 }
@@ -42,6 +44,7 @@ p {
     .column {
         width: 100%;
         display: block;
+        
     }
 }
 
@@ -97,4 +100,6 @@ p {
     background-color: #555;
 }
 
-
+.minColumn{
+    min-width: 246px;
+}
