@@ -37,7 +37,7 @@ router.get("/users", (req, res) => {
 })
 
 router.post("/me/survey", (req, res) => {
-	console.log('post', req.body);
+	// console.log('post', req.body);
 
 	// db.findById(req.user._id, (err, user) => {
 
@@ -51,18 +51,24 @@ router.post("/me/survey", (req, res) => {
 
 	db.findById(req.user._id)
 	.then((userInfo) => {
-		console.log(userInfo)
-		console.log(req.body)
-		console.log(req.user._id)
+		// console.log(userInfo)
+		console.log("================")
+		console.log(req.body.firstName)
+		console.log("================")
 
+		// console.log(req.user._id)
 
+		userInfo.firstName = req.body.firstName;
 		userInfo.selfSurveys = userInfo.selfSurveys.concat([req.body])
 		userInfo.save()
 		res.json(req.body)
 	});
-
-	
 })
+
+
+
+
+
 
 // db.findByIdAndUpdate(
 // 	req.user._id,

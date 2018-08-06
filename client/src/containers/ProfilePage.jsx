@@ -11,6 +11,7 @@ class ProfilePage extends Component {
   state = {
     secretData: '',
     user: null,
+    firstName: null,
     tag: "",
     points: "",
     skillType: "",
@@ -49,16 +50,35 @@ class ProfilePage extends Component {
   }
 
 
+  handleFirstNameChange = (event) => {
+    event.preventDefault();
+    // console.log("=====================================")
+    // console.log(event.target.value);
+    // console.log("=====================================")
+    // if(event.target.value) {
+      this.setState({ firstName: event.target.value });
+    // }
+  }
+
   handleSkillChange = (event) => {
-    this.setState({ tag: event.target.value });
+    // event.preventDefault();
+    if(event.target.value) {
+      this.setState({ tag: event.target.value });
+    }
   }
 
   handlePointsChange = (event) => {
-    this.setState({ points: event.target.value });
+    // event.preventDefault();
+    if(event.target.value) {
+      this.setState({ points: event.target.value });
+    }
   }
 
   handleSkillTypeChange = (event) => {
-    this.setState({ skillType: event.target.value })
+    // event.preventDefault();
+    if(event.target.value) {
+      this.setState({ skillType: event.target.value });
+    }
   }
 
 
@@ -68,13 +88,35 @@ class ProfilePage extends Component {
     const tagYo = this.state.tag;
     const pointsYo = this.state.points;
     const skillTypeYo = this.state.skillType;
+    const firstNameYo = this.state.firstName; 
+    
+
+
+    // if(this.state.firstName) {
+    //   firstNameYo = this.state.firstName;
+    // }
     // const userData = `tag=${tagYo}&points=${pointsYo}`;
 
     const userData = {
       tag: tagYo,
       points: pointsYo,
-      skillType: skillTypeYo
+      skillType: skillTypeYo,
+      firstName: firstNameYo
+
     }
+
+    // const userData = {
+    //   tag: this.state.tag,
+    //   points: this.state.points,
+    //   skillType: this.state.skillType,
+    //   firstName: this.state.firstName
+
+    // }
+
+    // const userDemoData = {
+    //   firstName: firstNameYo
+
+    // }
 
     let axiosConfig = {
       headers: {
@@ -91,6 +133,15 @@ class ProfilePage extends Component {
       .catch((err) => {
         console.log("AXIOS ERROR: ", err);
       })
+
+
+    // axios.post('/auth/login', userDemoData, axiosConfig)  
+    //   .then((res) => {
+    //     this.loadData()
+    //   })
+    //   .catch((err) => {
+    //     console.log("AXIOS ERROR: ", err);
+    //   })  
   }
 
 
@@ -107,6 +158,7 @@ class ProfilePage extends Component {
           <Modal 
             show={this.state.show} 
             handleClose={this.hideModal}
+            handleFirstNameChange={this.handleFirstNameChange}
             handleSkillChange={this.handleSkillChange}
             handlePointsChange={this.handlePointsChange}
             handleSkillTypeChange={this.handleSkillTypeChange}

@@ -12,7 +12,7 @@ var surveySchema = new Schema({
 
   tag: {type: String}, 
   points: {type: Number},
-  skillType: {type:String}
+  skillType: {type: String},
 
 })
 
@@ -25,6 +25,7 @@ const UserSchema = new mongoose.Schema({
   password: String,
   name: String,
   selfSurveys: [surveySchema],
+  firstName: String,
   averageRating: {
       tag: {type: String}, //new object pushed with recalculated values 
       points: {type: Number} //Decimal??
