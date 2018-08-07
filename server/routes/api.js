@@ -65,6 +65,14 @@ router.post("/me/survey", (req, res) => {
 			userInfo.lastName = req.body.lastName;
 		}
 
+		if(req.body.jobTitle && req.body.jobTitle !== null) {
+			userInfo.jobTitle = req.body.jobTitle;
+		}
+
+		if(req.body.portfolioURL && req.body.portfolioURL !== null) {
+			userInfo.portfolioURL = req.body.portfolioURL;
+		}
+
 		if(req.body.profilePicURL && req.body.profilePicURL !== null) {
 			userInfo.profilePicURL = req.body.profilePicURL;
 		}
@@ -91,6 +99,30 @@ router.post("/me/survey", (req, res) => {
 
 		if(req.body.aboutYou && req.body.aboutYou !== null) {
 			userInfo.aboutYou = req.body.aboutYou;
+		}
+
+		if(req.body.impossibleQuestion && req.body.impossibleQuestion !== null) {
+			userInfo.impossibleQuestion = req.body.impossibleQuestion;
+		}
+
+		if(req.body.deadlineQuestion && req.body.deadlineQuestion !== null) {
+			userInfo.deadlineQuestion = req.body.deadlineQuestion;
+		}
+
+		if(req.body.teamQuestion && req.body.teamQuestion !== null) {
+			userInfo.teamQuestion = req.body.teamQuestion;
+		}
+
+		if(req.body.personalityQuestion && req.body.personalityQuestion !== null) {
+			userInfo.personalityQuestion = req.body.personalityQuestion;
+		}
+
+		if(req.body.dissatisfactionQuestion && req.body.dissatisfactionQuestion !== null) {
+			userInfo.dissatisfactionQuestion = req.body.dissatisfactionQuestion;
+		}
+
+		if(req.body.passionQuestion && req.body.passionQuestion !== null) {
+			userInfo.passionQuestion = req.body.passionQuestion;
 		}
 
 		userInfo.selfSurveys = userInfo.selfSurveys.concat([req.body])

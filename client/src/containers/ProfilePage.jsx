@@ -2,10 +2,16 @@ import axios from 'axios';
 import Auth from '../modules/Auth';
 //import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
 import React, { Component } from "react";
+import UserInfo from '../components/ProfilePageComponents/UserInfo.jsx';
+import ProfilePic from "../components/ProfilePageComponents/ProfilePic.jsx"
+import AboutMe from '../components/ProfilePageComponents/AboutMe.jsx';
+import Personality from '../components/ProfilePageComponents/Personality.jsx';
 import TechnicalSkills from '../components/TechnicalSkills.jsx';
 import SoftSkills from '../components/SoftSkills.jsx';
 import Modal from '../components/Modal.jsx';
 import '../css/Main.css';
+import "../css/ProfilePage.css";
+
 
 class ProfilePage extends Component {
   state = {
@@ -13,6 +19,8 @@ class ProfilePage extends Component {
     user: null,
     firstName: null,
     lastName: null,
+    jobTitle: null,
+    portfolioURL: null,
     profilePicURL: null,
     phoneNumber: null,
     zipcode: null,
@@ -26,7 +34,16 @@ class ProfilePage extends Component {
     softTag: "",
     softPoints: "",
     softSkillType: "",
-    show: false
+    show: false,
+
+   
+
+    impossibleQuestion: null,
+    deadlineQuestion: null,
+    teamQuestion: null,
+    personalityQuestion: null,
+    dissatisfactionQuestion: null,
+    passionQuestion: null,
   };
 
   showModal = () => {
@@ -69,6 +86,16 @@ class ProfilePage extends Component {
   handleLastNameChange = (event) => {
     // event.preventDefault();
     this.setState({ lastName: event.target.value });
+  }
+
+  handleJobTitleChange = (event) => {
+    // event.preventDefault();
+    this.setState({ jobTitle: event.target.value });
+  }
+
+  handlePortfolioChange = (event) => {
+    // event.preventDefault();
+    this.setState({ portfolioURL: event.target.value });
   }
 
   handleProfilePicChange = (event) => {
@@ -142,7 +169,37 @@ class ProfilePage extends Component {
     }
   }
 
-  
+  handleImpossibleChange = (event) => {
+    // event.preventDefault();
+    this.setState({ impossibleQuestion: event.target.value });
+  }
+
+  handleDeadlineChange = (event) => {
+    // event.preventDefault();
+    this.setState({ deadlineQuestion: event.target.value });
+  }
+
+  handleTeamChange = (event) => {
+    // event.preventDefault();
+    this.setState({ teamQuestion: event.target.value });
+  }
+
+  handlePersonalityChange = (event) => {
+    // event.preventDefault();
+    this.setState({ personalityQuestion: event.target.value });
+  }
+
+  handleDissatisfactionChange = (event) => {
+    // event.preventDefault();
+    this.setState({ dissatisfactionQuestion: event.target.value });
+  }
+
+  handlePassionChange = (event) => {
+    // event.preventDefault();
+    this.setState({ passionQuestion: event.target.value });
+  }
+
+ 
 
 
   handleFormSubmit = (event) => {
@@ -177,6 +234,8 @@ class ProfilePage extends Component {
       softSkillType: this.state.softSkillType,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
+      jobTitle: this.state.jobTitle,
+      portfolioURL: this.state.portfolioURL,
       profilePicURL: this.state.profilePicURL,
       phoneNumber: this.state.phoneNumber,
       zipcode: this.state.zipcode,
@@ -184,6 +243,12 @@ class ProfilePage extends Component {
       linkedInURL: this.state.linkedInURL,
       githubURL: this.state.githubURL,
       aboutYou: this.state.aboutYou,
+      impossibleQuestion: this.state.impossibleQuestion,
+      deadlineQuestion: this.state.deadlineQuestion,
+      teamQuestion: this.state.teamQuestion,
+      personalityQuestion: this.state.personalityQuestion,
+      dissatisfactionQuestion: this.state.dissatisfactionQuestion,
+      passionQuestion: this.state.passionQuestion
     }
 
     // const userDemoData = {
@@ -233,6 +298,10 @@ class ProfilePage extends Component {
             handleClose={this.hideModal}
             handleFirstNameChange={this.handleFirstNameChange}
             handleLastNameChange={this.handleLastNameChange}
+
+            handleJobTitleChange={this.handleJobTitleChange}
+            handlePortfolioChange={this.handlePortfolioChange}
+
             handleProfilePicChange={this.handleProfilePicChange}
             handlePhoneChange={this.handlePhoneChange}
             handleZipcodeChange={this.handleZipcodeChange}
@@ -247,6 +316,13 @@ class ProfilePage extends Component {
             handleSoftSkillChange={this.handleSoftSkillChange}
             handleSoftPointsChange={this.handleSoftPointsChange}
 
+            handleImpossibleChange={this.handleImpossibleChange}
+            handleDeadlineChange={this.handleDeadlineChange}
+            handleTeamChange={this.handleTeamChange}
+            handlePersonalityChange={this.handlePersonalityChange}
+            handleDissatisfactionChange={this.handleDissatisfactionChange}
+            handlePassionChange={this.handlePassionChange}
+
 
             handleFormSubmit={this.handleFormSubmit}>
 
@@ -257,20 +333,7 @@ class ProfilePage extends Component {
         </main>
 
 
-        {/* <div>
-        <SelfSurveyForm
-        handleSkillChange={this.handleSkillChange}
-        handlePointsChange={this.handlePointsChange}
-        handleSkillTypeChange={this.handleSkillTypeChange}
-        handleFormSubmit={this.handleFormSubmit}  */}
-
         <div>
-
-          {/* {var skill= console.log(this.state.user.selfSurveys[0].tag)} */}
-              
-          <div>
-            {/* {this.state.user && <SurveySkill title="Technical Skills" skills={this.state.user.selfSurveys} />} */}
-          </div>
 
           <div>
             <title>Profile</title>
@@ -285,115 +348,60 @@ class ProfilePage extends Component {
           <div className="w3-content w3-margin-top" style={{ maxWidth: 1400 }}>
             {/* The Grid */}
             <div className="w3-row-padding">
+
+
               {/* Left Column */}
+
               <div className="w3-third">
                 <div className="w3-white w3-text-grey w3-card-4">
-                  <div className="w3-display-container">
-                    <img src="/images/sherryyang.jpeg" style={{ width: '100%' }} alt="Avatar" />
-                    <div className="w3-display-bottomleft w3-container w3-text-black">
-                      <h2>Sherry Yang</h2>
-                    </div>
-                  </div>
+                  {this.state.user && <ProfilePic devContactInfo={this.state.user}/>}
+
                   <div className="w3-container">
-                    <p><i className="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-indigo" />Full Stack Developer</p>
-                    <p><i className="fa fa-home fa-fw w3-margin-right w3-large w3-text-indigo" />Dallas, TX</p>
-                    <p><i className="fa fa-linkedin fa-fw w3-margin-right w3-large w3-text-indigo" />LinkedIn</p>
-                    <p><i className="fa fa-github fa-fw w3-margin-right w3-large w3-text-indigo" />GitHub</p>
-                    <p><i className="fa fa-plane fa-fw w3-margin-right w3-large w3-text-indigo" />Willing to Relocate: Yes</p>
-                    <p><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-indigo" />sharebear31496@gmail.com</p>
-                    <p><i className="fa fa-phone fa-fw w3-margin-right w3-large w3-text-indigo" />2145555555</p>
-                    <hr />
+
+                    {this.state.user && <UserInfo devContactInfo={this.state.user}/>}
+
+                    <hr className="hr"/>
+                    
                     <p className="w3-large"><b><i className="fa fa-laptop fa-fw w3-margin-right w3-text-indigo" />Technical Skills</b></p>
 
                     {this.state.user && <TechnicalSkills title="Technical Skills" skills={this.state.user.selfSurveys.filter(word => word.techSkillType === "Technical")} />}
-                    {/* {this.state.user && <TechnicalSkills title="Technical Skills" skills={this.state.user.selfSurveys} />} */}
 
-
+                    <hr className="hr"/>
                     <br />
+
+                    <p className="w3-large"><b><i className="fa fa-handshake-o fa-fw w3-margin-right w3-text-indigo" />Soft Skills</b></p>
 
                     {this.state.user && <SoftSkills title="Soft Skills" skills={this.state.user.selfSurveys.filter(word => word.softSkillType === "Soft")} />}
 
-                    <br />
+
+                    <br/>
                   </div>
-                </div><br />
-                {/* End Left Column */}
-              </div>
+                </div>
+                <br/>
+              </div>  
+            {/* End Left Column */}
+
+
               {/* Right Column */}
               <div className="w3-twothird">
-                <div className="w3-container w3-card w3-white w3-margin-bottom">
-                  <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-user fa-fw w3-margin-right w3-xxlarge w3-text-indigo" />About</h2>
-                  <div className="w3-container">
-                    <h5 className="w3-opacity"><b></b></h5>
-                    <h6 className="w3-text-indigo"><i /><span className="w3-tag w3-indigo w3-round"></span></h6>
-                    <p>I love the environment. I want to use code to fight climate change!</p>
-                    <hr />
-                  </div>
-                  {/* <div className="w3-container">
-            <h5 className="w3-opacity"><b>Web Developer / something.com</b></h5>
-            <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />Mar 2012 - Dec 2014</h6>
-            <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-            <hr />
-          </div>
-          <div className="w3-container">
-            <h5 className="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
-            <h6 className="w3-text-indigo"><i className="fa fa-calendar fa-fw w3-margin-right" />Jun 2010 - Mar 2012</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br />
-          </div> */}
-                </div>
+                {this.state.user && <AboutMe devContactInfo={this.state.user}/>}
+
                 <div className="w3-container w3-card w3-white">
                   <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-superpowers fa-fw w3-margin-right w3-xxlarge w3-text-indigo" />Personality + Work Culture</h2>
-                  <div className="w3-container">
-                    <h5 className="w3-opacity"><b>If your manager asked you to complete a task you thought impossible at first, how would you go about it?</b></h5>
-                    <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />I love documentation! I'd dive right in...as long as it takes.</h6>
-                    {/* <p>I love documentation! I'd dive right in...as long as it takes.</p> */}
-                    <hr />
-                  </div>
-                  <div className="w3-container">
-                    <h5 className="w3-opacity"><b>Tell me about a time you missed (or almost missed) a deadline. How did you react when you realized you were falling behind? What did that experience teach you?</b></h5>
-                    <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />Accept what you cannot control. That's my mantra</h6>
-                    {/* <p>I love documentation! I'd dive right in...as long as it takes.</p> */}
-                    <hr />
-                  </div>
-                  <div className="w3-container">
-                    <h5 className="w3-opacity"><b>Do you prefer working in a team or on your own? Why?</b></h5>
-                    <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />I love teams! I grew up in a big family!</h6>
-                    {/* <p>I love documentation! I'd dive right in...as long as it takes.</p> */}
-                    <hr />
-                  </div>
-                  <div className="w3-container">
-                    <h5 className="w3-opacity"><b>If you could change one thing about your personality at the snap of your fingers what would it be and why?</b></h5>
-                    <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />I wish I were more outgoing...</h6>
-                    {/* <p>I love documentation! I'd dive right in...as long as it takes.</p> */}
-                    <hr />
-                  </div>
-                  <div className="w3-container">
-                    <h5 className="w3-opacity"><b>Tell me about a time your manager wasn’t satisfied with the results of your work. How did you discuss the issues and what did you do differently the next time?</b></h5>
-                    <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />I am a perfectionist. My manager is always happy - seriously.</h6>
-                    {/* <p>I love documentation! I'd dive right in...as long as it takes.</p> */}
-                    <hr />
-                  </div>
-                  <div className="w3-container">
-                    <h5 className="w3-opacity"><b>What are you passionate about? (Causes, Activities, Hobbies, etc.)</b></h5>
-                    <h6 className="w3-text-indigo"><i className="fa fa-comment fa-fw w3-margin-right" />I love to rock climb and I voluteer for Dallas Homeless Organization</h6>
-                    {/* <p>I love documentation! I'd dive right in...as long as it takes.</p> */}
-                    <hr />
-                  </div>
+                  {this.state.user && <Personality devContactInfo={this.state.user}/>}
                 </div>
                 {/* End Right Column */}
               </div>
               {/* End Grid */}
+
             </div>
             {/* End Page Container */}
           </div>
 
         </div>
-
-
-
       </div>
-
-</div>
-      );
+    </div>
+    );
   }
 
 }

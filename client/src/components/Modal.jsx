@@ -37,6 +37,26 @@ const Modal = (props) => {
                       <div className="col-md-5 offset-md-1">
                           <div className="input-group mb-3">
                               <div className="input-group-prepend">
+                                  <span className="input-group-text">Current Role</span>
+                              </div>
+                              <input onChange={props.handleJobTitleChange} type="text" placeholder="Enter your current role" className="form-control" id="CurrentRole"/>
+                          </div>
+                      </div>
+
+                      <div className="col-md-5">
+                          <div className="input-group mb-3">
+                              <div className="input-group-prepend">
+                                  <span className="input-group-text">Portfolio Link</span>
+                              </div>
+                              <input onChange={props.handlePortfolioChange} type="text" placeholder="Enter your portfolio link" className="form-control" id="PortfolioLink"/>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div className="row">
+                      <div className="col-md-5 offset-md-1">
+                          <div className="input-group mb-3">
+                              <div className="input-group-prepend">
                                   <span className="input-group-text">Profile Picture</span>
                               </div>
                               <input onChange={props.handleProfilePicChange} type="url" placeholder="https://image-link.com" className="form-control" id="ProfilePic"/>
@@ -68,8 +88,8 @@ const Modal = (props) => {
                               <div className="input-group-prepend">
                                   <span className="input-group-text">Willing to Relocate?</span>
                               </div>
-                              <select className="form-control" onChange={props.handleRelocationChange} type="text" id="Relocation">
-                                <option disabled selected value> -- Select an Option -- </option>
+                              <select defaultValue="DisabledSelect" className="form-control" onChange={props.handleRelocationChange} type="text" id="Relocation">
+                                <option value="DisabledSelect" disabled > -- Select an Option -- </option>
                                 <option value="Maybe">Maybe</option>
                                 <option value="Yes">Yes</option>
 			                    <option value="No">No</option>
@@ -127,8 +147,8 @@ const Modal = (props) => {
                               <div className="input-group-prepend">
                                   <span className="input-group-text">Points</span>
                               </div>
-                              <select className="form-control" onChange={props.handleTechnicalPointsChange} type="text" id="Points">
-                                <option disabled selected value> -- Select an Option -- </option>
+                              <select defaultValue="DisabledSelect" className="form-control" onChange={props.handleTechnicalPointsChange} type="text" id="Points">
+                                <option value="DisabledSelect" disabled> -- Select an Option -- </option>
                                 {/* <option value="0">0 = (Default) Declined to Answer / Don’t Use at All</option> */}
                                 <option value="1">1 = Exposure to this Technology</option>
                                 <option value="2">2 = Could Effectively Perform a Junior-Level Job using this Technology</option>
@@ -146,8 +166,8 @@ const Modal = (props) => {
                               <div className="input-group-prepend">
                                   <span className="input-group-text">Soft Skill</span>
                               </div>
-                              <select className="form-control" onChange={props.handleSoftSkillChange} type="text" id="SoftSkill">
-                                <option disabled selected value> -- Select an Option -- </option>
+                              <select defaultValue="DisabledSelect" className="form-control" onChange={props.handleSoftSkillChange} type="text" id="SoftSkill">
+                                <option value="DisabledSelect" disabled> -- Select an Option -- </option>
                                 <option value="Work Ethic">Work Ethic</option>
                                 <option value="Communication Skills">Communication Skills</option>
                                 <option value="Creative Problem Solving">Creative Problem Solving</option>
@@ -162,8 +182,8 @@ const Modal = (props) => {
                               <div className="input-group-prepend">
                                   <span className="input-group-text">Rating</span>
                               </div>
-                              <select className="form-control" onChange={props.handleSoftPointsChange} type="text" id="SoftPoints">
-                                <option disabled selected value> -- Select an Option -- </option>
+                              <select defaultValue="DisabledSelect" className="form-control" onChange={props.handleSoftPointsChange} type="text" id="SoftPoints">
+                                <option value="DisabledSelect" disabled> -- Select an Option -- </option>
                                 {/* <option value="0">0</option> */}
                                 <option value="1">1</option>
                                 <option value="2">2</option>

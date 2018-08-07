@@ -13,6 +13,7 @@ var surveySchema = new Schema({
   technicalTag: {type: String}, 
   technicalPoints: {type: Number},
   techSkillType: {type: String},
+
   softTag: {type: String}, 
   softPoints: {type: Number},
   softSkillType: {type: String},
@@ -28,22 +29,81 @@ const UserSchema = new mongoose.Schema({
   password: String,
   name: String,
   selfSurveys: [surveySchema],
-  firstName: String,
-  lastName: String,
-  profilePicURL: String,
-  phoneNumber: String,
+  firstName: {
+    type: String,
+    default: "FirstName"
+  },
+  lastName: {
+    type: String,
+    default: "LastName"
+  },
+  profilePicURL: {
+    type: String,
+    default: "https://34yigttpdc638c2g11fbif92-wpengine.netdna-ssl.com/wp-content/uploads/2016/09/default-user-img.jpg"
+  },
+  jobTitle: {
+    type: String,
+    default: "Full Stack Developer"
+  },
+  phoneNumber: {
+    type: String,
+    default: "555-555-5555"
+  },
+  location: {
+    type: String,
+    default: "Anytown, USA"
+  },
   zipcode: String, 
-  relocation: String,
-  linkedInURL: String,
-  githubURL: String,
-  aboutYou: String,
+  relocation: {
+    type: String,
+    default: "-"
+  },
+  portfolioURL : {
+    type: String,
+    default: "My Portfolio"
+  },
+  linkedInURL: {
+    type: String,
+    default: "www.linkedin.com"
+  },
+  githubURL: {
+    type: String,
+    default: "www.github.com"
+  },
+  aboutYou: {
+    type: String,
+    default: "Default - Hi, I'm a developer and I love technology!"
+  },
+  impossibleQuestion: {
+    type: String,
+    default: "Default - I love documentation! I'd dive right in...as long as it takes."
+  },
+  deadlineQuestion: {
+    type: String,
+    default: "Default - Accept what you cannot control. That's my mantra."
+  },
+  teamQuestion: {
+    type: String,
+    default: "Default - I love teams! I grew up in a big family!"
+  },
+  personalityQuestion: {
+    type: String,
+    default: "Default - I wish I were more outgoing..."
+  },
+  dissatisfactionQuestion: {
+    type: String,
+    default: "Default - I am a perfectionist. My manager is always happy - seriously."
+  },
+  passionQuestion: {
+    type: String,
+    default: "Default - I love to code, it's all I ever do."
+  },
   averageRating: {
       tag: {type: String}, //new object pushed with recalculated values 
       points: {type: Number} //Decimal??
-    },
-    communitySurveys: [surveySchema],
+  },
+  communitySurveys: [surveySchema],
   });
-
 
 /**
  * Compare the passed password with the value in the database. A model method.
