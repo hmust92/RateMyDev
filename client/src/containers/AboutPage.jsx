@@ -26,7 +26,7 @@ class AboutPage extends React.Component {
           <p>
             The tools used to create and run the modern web change at incredible
             speed. HR managers and recruiters often don't really understand
-            technology languages and tools beyond the acronyms. What's more, the
+            technology languages and tools beyond the spelling of the acronyms. What's more, the
             interview process between Developers who are strangers is stressful,
             arduous and incomplete. Only Devs who have already worked with other
             Devs on real world projects really know who can do what.
@@ -34,15 +34,15 @@ class AboutPage extends React.Component {
           <p>
             RATE THAT DEV is a Full Stack app using REACT that scores Developers
             on Technical skills (using defined criteria of skill compentency) as
-            well as Soft Skills (that reflect the Dev's ability to work with
-            others). Recruiters, CTOs, Hiring managers or startups can contact
+            well as Soft Skills reflecting the Dev's ability to work with
+            others. Recruiters, CTOs, Hiring managers or startups can contact
             developers with the closest match to their specific requirements and
             work culture needs. Comprehensive Developer Profiles allow decision
             makers to have a much clearer idea of who a developer is before
             reaching out for an interview. Ratings that reflect the developer's
             own estimation of their skill as well as{" "}
             <b>
-              anonymous peer reviews of the developer skills ensure that the
+              anonymized peer reviews of the developer skills ensure that the
               developer profiles are accurate.
             </b>
           </p>
