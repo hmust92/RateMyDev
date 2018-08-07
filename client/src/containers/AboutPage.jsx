@@ -47,7 +47,7 @@ class AboutPage extends React.Component {
             </b>
           </p>
         </div>
-
+        <hr />
         <h1>Meet the Team</h1>
         <div className="cardsContainer">
           <div className="row">
@@ -60,18 +60,14 @@ class AboutPage extends React.Component {
                 <div className="container aboutContainer">
                   <h2>David Daniels</h2>
                   <p className="title">UX Developer</p>
-                  {/* <a href="http://www.github.com/dvdkrstndnls"> <i className="fa fa-github fa-fw w3-margin-right w3-large w3-text-indigo" /></i></a> */}
-                  {/* <a href="http://www.website.com" title="Website name"><i style="margin-right: 0.5em; color: #EEEEEE;" class="icon-home icon-4x"></i>Website Link</a> */}
-                  {/* <p><i className="fa fa-github fa-fw w3-margin-right w3-large w3-text-indigo" />GitHub</p>
-       */}
                   <p className="details">
                     Thinks job searching is inefficient. Has some ideas. Feels
                     strongly about them. Likes to work.
                   </p>
                   <p>
-                    <u>
-                      <a href="mailto:daviddaniels@gmail.com">Contact</a>
-                    </u>
+                    
+                  <a href="mailto:daviddaniels@gmail.com" title="check out this developer on GitHub"><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black" /></a>
+                  <a href="http://www.github.com/dvdkrstndnls" title="check out this developer on GitHub"><i className="fa fa-github fa-fw w3-margin-right w3-large w3-text-black" /></a>
                   </p>
                   {/* <p><button><a href="mailto:daviddaniels@gmail.com">Contact</a></button></p> */}
                 </div>
@@ -93,11 +89,10 @@ class AboutPage extends React.Component {
                     all the time.
                   </p>
                   <p>
-                    <u>
-                      <a href="mailto:prose2334@gmail.com">Contact</a>
-                    </u>
+                  <a href="mailto:prose2334@gmail.com"><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black" /></a>    
+                  <a href="https://github.com/prose34" title="check out this developer on GitHub"><i className="fa fa-github fa-fw w3-margin-right w3-large w3-text-black" /></a>
                   </p>
-                  {/* <p><button><a href="mailto:prose2334@gmail.com">Contact</a></button></p> */}
+                 
                 </div>
               </div>
             </div>
@@ -116,12 +111,10 @@ class AboutPage extends React.Component {
                     Deep into the documentation, finding the necessary tools.
                   </p>
                   <p>
-                    <u>
-                      <a href="mailto:hmust92@gmail.com">Contact</a>
-                    </u>
+                  <a href="mailto:hmust92@gmail.com"><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black" /></a>  
+                  <a href="https://github.com/hmust92" title="check out this developer on GitHub"><i className="fa fa-github fa-fw w3-margin-right w3-large w3-text-black" /></a>
                   </p>
-                  {/* <p><button><a href="mailto:hmust92@gmail.com">Contact</a></button></p> */}
-                  {/* <p><button className="button">Contact</button></p> */}
+                  
                 </div>
               </div>
             </div>
@@ -135,16 +128,16 @@ class AboutPage extends React.Component {
                 <div className="container aboutContainer">
                   {" "}
                   <h2>Sherry Yang</h2>
-                  <p className="title">UI</p>
+                  <p className="title">UI Developer</p>
                   <p className="details">
                     Anticipates the obstacles. Offers an alternate view.
                   </p>
                   <p>
-                    <u>
-                      <a href="mailto:sharebear31496@gmail.com">Contact</a>
-                    </u>
+                    
+                  <a href="mailto:sharebear31496@gmail.com"><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black" /></a>  
+                  <a href="https://github.com/xxsherryyy" title="check out this developer on GitHub"><i className="fa fa-github fa-fw w3-margin-right w3-large w3-text-black" /></a>
                   </p>
-                  {/* <p><button><a href="mailto:sharebear31496@gmail.com">Contact</a></button></p> */}
+                 
                 </div>
               </div>
             </div>
@@ -157,17 +150,16 @@ class AboutPage extends React.Component {
                 />
                 <div className="container aboutContainer">
                   {" "}
-                  <h2>Elaulas Cristiano</h2>
+                  <h2>E. Cristiano</h2>
                   <p className="title">Subject Matter Expert (SME)</p>
                   <p className="details">
                     Brings a thoughtful perspective to the problem at hand.
                   </p>
                   <p>
-                    <u>
-                      <a href="mailto:elaulas@gmail.com">Contact</a>
-                    </u>
+                  <a href="mailto:elaulas@gmail.com"><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black" /></a>  
+                  <a href="https://github.com/elaulas" title="check out this developer on GitHub"><i className="fa fa-github fa-fw w3-margin-right w3-large w3-text-black" /></a>
                   </p>
-                  {/* <p><button><a href="mailto:elaulas@gmail.com">Contact</a></button></p> */}
+                  
                 </div>
               </div>
             </div>

@@ -19,6 +19,7 @@
   top: 20%;
 } 
 
+/* this styles the cog box without affecting the cards in about page */
 .search-style {
   height: 300px;
   width: 300px;
