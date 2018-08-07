@@ -43,7 +43,7 @@ class AboutPage extends React.Component {
             own estimation of their skill as well as{" "}
             <b>
               anonymous peer reviews of the developer skills ensure that the
-              developer profiles are accurate
+              developer profiles are accurate.
             </b>
           </p>
         </div>
@@ -53,8 +53,7 @@ class AboutPage extends React.Component {
           <div className="row">
             <div className="column">
               <div className="card aboutCard">
-                <img
-                  src="/images/dkd.jpeg"
+                <img src="/images/dkd.jpeg"
                   alt="David"
                   style={{ width: "100%" }}
                 />
