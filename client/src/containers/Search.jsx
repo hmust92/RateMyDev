@@ -16,7 +16,7 @@ class Search extends Component {
     error: ""
   };
 
-  // When the component mounts, get a list of all available skills and update this.state.breeds
+  // When the component mounts, get a list of all available skills and update this.s  tate.breeds
   componentDidMount() {
     API.getSkillsList()
       .then(res => {
@@ -32,7 +32,7 @@ class Search extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.getDogsOfBreed(this.state.search)
+    API.getUserInfo(this.state.search)
       .then(res => {
         if (res.data.status === "error") {
           throw new Error(res.data.message);
