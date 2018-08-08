@@ -269,7 +269,7 @@ const Modal = (props) => {
                     <br/>
 
 
-                    <button onClick={props.handleFormSubmit} onClick={props.handleClose} type="submit" className="btn btn-primary">Submit</button>
+                    <button onClick={props.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
                   
                   </form>
 
