@@ -1,8 +1,28 @@
+# RateThatDev
+
+The tools used to create and run the modern web change at incredible speed. HR managers and recruiters often don't really understand technology languages and tools beyond the acronyms. What's more, the interview process between Developers who are strangers is stressful, arduous and incomplete. Only Devs who have already worked with other Devs on real world projects really know who can do what.
+
+RATE THAT DEV is a Full Stack app using REACT that scores Developers on Technical skills (using defined criteria of skill compentency) as well as Soft Skills (that reflect the Dev's ability to work with others). Recruiters, CTOs, Hiring managers or startups can contact developers with the closest match to their specific requirements and work culture needs. Comprehensive Developer Profiles allow decision makers to have a much clearer idea of who a developer is before reaching out for an interview. Ratings that reflect the developer's own estimation of their skill as well as anonymous peer reviews of the developer skills ensure that the developer profiles are accurate.
+
+
+# TEAM
+
+david daniels :: https://github.com/dvdkrstndnls/ -  UX, front-end, concept
+
+paul rose :: https://github.com/prose34 - full stack developer, architecture
+
+hasan mustafa :: https://github.com/hmust92 - full-stack developer
+
+sherry yang :: https://github.com/xxsherryyy - front-end developer
+
+elaulas cristiano :: https://github.com/elaulas - subject matter expert
+
+special thanks to @spacesuitdiver
+
 ##  QUICK START
 
 
-
-(in the terminal (aka terminal 1) run...
+in the terminal (aka terminal 1) run...
 
 ```
 npm install
@@ -17,40 +37,24 @@ npm install
 ```
 
 in a seperate terminal start up mongoDB. If you use homebrew you can run:)
-'''
+```
 brew services start mongodb
 ```
 
 (back in the terminal 1)
 
-'''
+```
 cd ..
-'''
+```
 
-'''
+```
 npm run start:dev
-'''
+```
 
 ##Demo Day Slide Deck
 https://docs.google.com/presentation/d/16DpMm0F2r1e9zeb7bpkPtoatQkR7pW3gqDFWisIcy80/edit?usp=sharing
 
-# RateMyDev
-Project 3 
 
-HR managers don't really understand tech beyond the acronyms and the interview process between Devs who are strangers is arduous. Only Devs who have already worked with other Devs really know who can do what.
-
-Rate My Dev is a React app that scores Developers on tech skills through defined criterias of skill compentency. Hiring managers or startups can contact developers with the closest match to their specific requirements based on skill location and mastery.
-
-
-hasan - REACT and mongo, full-stack
-
-paul - mongo, full-stack
-
-elaulas - back end mongo
-
-sherry - Repo Owner, full-stack
-
-david - architecting, UX, front-end and/or powerpoint presentation
 
 ![alt text](https://github.com/xxsherryyy/RateMyDev/blob/master/image.png)
 

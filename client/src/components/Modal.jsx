@@ -182,14 +182,15 @@ const Modal = (props) => {
                               <div className="input-group-prepend">
                                   <span className="input-group-text">Rating</span>
                               </div>
-                              <select defaultValue="DisabledSelect" className="form-control" onChange={props.handleSoftPointsChange} type="text" id="SoftPoints">
-                                <option value="DisabledSelect" disabled> -- Select an Option -- </option>
-                                {/* <option value="0">0</option> */}
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+
+                              {/* <select class="form-control" onChange={props.handleSoftPointsChange} type="text" class="form-control" id="SoftPoints"> */}  
+                              <select className="form-control" onChange={props.handleSoftPointsChange} type="text" id="SoftPoints">
+                              <option value="0">0 = declined to answer</option>
+                                <option value="1">1 = not strong at all</option>
+                                <option value="2">2 = weak</option>
+                                <option value="3">3 = average</option>
+                                <option value="4">4 = above average</option>
+                                <option value="5">5 = absolute rockstar</option>
                               </select>
                           </div>
                       </div>
@@ -263,7 +264,8 @@ const Modal = (props) => {
             </div> */}
           </div>
 
-          <button onClick={props.handleClose}>close</button>
+          <button type="button" onClick={props.handleClose}>close</button>
+          
         </section>
       </div>
     );

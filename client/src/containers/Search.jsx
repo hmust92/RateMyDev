@@ -4,6 +4,9 @@ import Container from "../components/davidcomponents/Container";
 import SearchForm from "../components/davidcomponents/SearchForm";
 import SearchResults from "../components/davidcomponents/SearchResults";
 import Alert from "../components/davidcomponents/Alert";
+import FindDev from "../components/FindDev.jsx";
+import Card from "../components/davidcomponents/Card";
+import CardBtn from "../components/davidcomponents/CardBtn";
 
 class Search extends Component {
   state = {
@@ -13,7 +16,7 @@ class Search extends Component {
     error: ""
   };
 
-  // When the component mounts, get a list of all available skills and update this.state.breeds
+  // When the component mounts, get a list of all available skills and update this.s  tate.breeds
   componentDidMount() {
     API.getSkillsList()
       .then(res => {
@@ -29,7 +32,7 @@ class Search extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.getDogsOfBreed(this.state.search)
+    API.getUserInfo(this.state.search)
       .then(res => {
         if (res.data.status === "error") {
           throw new Error(res.data.message);
@@ -38,6 +41,11 @@ class Search extends Component {
       })
       .catch(err => this.setState({ error: err.message }));
   };
+
+  handleBtnClick = event => {
+    console.log(event);
+  };
+  
   render() {
     return (
       <div>
@@ -56,6 +64,13 @@ class Search extends Component {
           />
           <SearchResults results={this.state.results} />
         </Container>
+
+        <Card className="container" image={this.state.image} handleBtnClick={this.handleBtnClick} />
+        {/* <h1 className="text-center"> */}
+        
+      
+
+      {/* </Card> */}
       </div>
     );
   }
