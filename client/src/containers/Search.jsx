@@ -4,9 +4,9 @@ import Container from "../components/davidcomponents/Container";
 import SearchForm from "../components/davidcomponents/SearchForm";
 import SearchResults from "../components/davidcomponents/SearchResults";
 import Alert from "../components/davidcomponents/Alert";
-import FindDev from "../components/FindDev.jsx";
+// import FindDev from "../components/FindDev.jsx";
 import Card from "../components/davidcomponents/Card";
-import CardBtn from "../components/davidcomponents/CardBtn";
+// import CardBtn from "../components/davidcomponents/CardBtn";
 
 class Search extends Component {
   state = {

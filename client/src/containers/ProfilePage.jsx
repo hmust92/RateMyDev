@@ -1,5 +1,7 @@
 import axios from 'axios';
 import Auth from '../modules/Auth';
+import API from "../utils/API";
+
 //import SelfSurveyForm from '../components/SelfSurveyForm.jsx';
 import React, { Component } from "react";
 import UserInfo from '../components/ProfilePageComponents/UserInfo.jsx';
@@ -36,7 +38,10 @@ class ProfilePage extends Component {
     softSkillType: "",
     show: false,
 
-   
+    search: "",
+    stackOverflowSkills: [],
+    results: [],
+    error: "",
 
     impossibleQuestion: null,
     deadlineQuestion: null,
@@ -58,9 +63,18 @@ class ProfilePage extends Component {
    * This method will be executed after initial rendering.
    */
    componentDidMount() {
-    console.log(this.props)
-    this.loadData()
+    console.log(this.props);
+    this.loadData();
+
+    API.getSkillsList()
+    .then(res => {
+      console.log(res)
+      this.setState({ stackOverflowSkills: res.data.items })
+    })
+    .catch(err => console.log(err));
+
   }
+
 
   loadData = () => {
     axios.get(`/api/${this.props.match.params.userId}`,
@@ -150,6 +164,7 @@ class ProfilePage extends Component {
       this.setState({ technicalPoints: event.target.value });
     }
   }
+
 
 
   handleSoftSkillChange = (event) => {
@@ -272,15 +287,16 @@ class ProfilePage extends Component {
         console.log("AXIOS ERROR: ", err);
       })
 
-
-    // axios.post('/auth/login', userDemoData, axiosConfig)  
-    //   .then((res) => {
-    //     this.loadData()
+    // API.getUserInfo(this.state.search)
+    //   .then(res => {
+    //     if (res.data.status === "error") {
+    //       throw new Error(res.data.message);
+    //     }
+    //     this.setState({ results: res.data.message, error: "" });
     //   })
-    //   .catch((err) => {
-    //     console.log("AXIOS ERROR: ", err);
-    //   })  
-  }
+    //   .catch(err => this.setState({ error: err.message }));
+    this.hideModal()
+  };
 
 
   /**
@@ -312,6 +328,9 @@ class ProfilePage extends Component {
 
             handleTechnicalSkillChange={this.handleTechnicalSkillChange}
             handleTechnicalPointsChange={this.handleTechnicalPointsChange}
+
+            handleInputChange={this.handleInputChange}
+            stackOverflowSkills={this.state.stackOverflowSkills}
 
             handleSoftSkillChange={this.handleSoftSkillChange}
             handleSoftPointsChange={this.handleSoftPointsChange}

@@ -103,3 +103,7 @@ p {
 .minColumn{
     min-width: 246px;
 }
+
+.aboutDevLinks {
+    text-align: center
+}

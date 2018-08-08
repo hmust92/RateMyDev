@@ -48,3 +48,12 @@ div.w3-container.w3-card.w3-white {
 .modal-main {
     padding-top: 50px;
 }
+
+.devNameFirstLast {
+    /* text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; */
+    /* text-shadow: 2px 1px white; */
+    background: rgba(204, 204, 204, 0.75);
+    border-radius: 5px;
+    padding: 10px;
+    /* text-align: center */
+}
