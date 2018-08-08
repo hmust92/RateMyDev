@@ -26,6 +26,17 @@ nav#navbar {
     max-height: calc(100vh - 5%);
     overflow-y: auto;
   }
+
+  .close {
+    float: right;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+  }
   
   .display-block {
     display: block;
@@ -34,3 +45,8 @@ nav#navbar {
   .display-none {
     display: none;
   }
+
+  
+element.style {
+  text-align: center;
+}

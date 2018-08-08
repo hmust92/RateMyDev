@@ -13,7 +13,7 @@ import {
 //import Search from "./Search.jsx";
 
 
-const HomePage = () => (
+const HomePage = (props) => (
 
   <div>
     <Hero backgroundImage="https://png.pngtree.com/thumb_back/fw800/back_pic/00/08/57/41562ad4a92b16a.jpg">
@@ -43,7 +43,7 @@ const HomePage = () => (
           
           </p>
 
-          <Link to="/profile"><button>I'm a Developer</button></Link> 
+          <Link to={`/profile/${props.userId}`}><button>I'm a Developer</button></Link> 
           <Link to="/search"><button>I'm Hiring</button></Link>
           
         </Col>

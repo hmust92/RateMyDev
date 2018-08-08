@@ -17,7 +17,7 @@ class Search extends Component {
     results: []
   };
 
-  // When the component mounts, get a list of all available skills and update this.state.breeds
+  // When the component mounts, get a list of all available skills and update this.s  tate.breeds
   componentDidMount() {
     API.getSkillsList()
     .then(res => {
@@ -58,6 +58,11 @@ class Search extends Component {
     this.setState({ tags: [...tags, this.state.search] });
     
   };
+
+  handleBtnClick = event => {
+    console.log(event);
+  };
+  
   render() {
     return (
       <div>

@@ -141,7 +141,7 @@ class Main extends Component {
               </div>
             </nav>
             
-              <PropsRoute exact path="/" component={HomePage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
+              <PropsRoute exact path="/" component={HomePage} userId={this.state.userId} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
               <LoggedOutRoute path="/login" component={LoginPage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
               <LoggedOutRoute path="/signup" component={SignUpPage}/>
               <Route path="/about" component={AboutPage}/>

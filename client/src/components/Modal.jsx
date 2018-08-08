@@ -138,7 +138,20 @@ const Modal = (props) => {
                               <div className="input-group-prepend">
                                   <span className="input-group-text">Technical Skill</span>
                               </div>
-                              <input onChange={props.handleTechnicalSkillChange} type="text" className="form-control" id="Skill"/>
+                              <input 
+                                // value={props.search}
+                                // onChange={props.handleInputChange}
+                                onChange={props.handleTechnicalSkillChange}
+                                name="stackOverflowSkill"
+                                list="stackOverflowSkills"
+                                type="text"
+                                className="form-control"
+                                placeholder="ex: javascript, css, html"
+                                id="stackOverflowSkill"
+                              />
+                            <datalist id="stackOverflowSkills">
+                                {props.stackOverflowSkills.map(stackOverflowSkill => <option value={stackOverflowSkill.name} key={stackOverflowSkill.name} />)}
+                            </datalist>  
                           </div>
                       </div>
 
@@ -182,14 +195,15 @@ const Modal = (props) => {
                               <div className="input-group-prepend">
                                   <span className="input-group-text">Rating</span>
                               </div>
+
+                              {/* <select class="form-control" onChange={props.handleSoftPointsChange} type="text" class="form-control" id="SoftPoints"> */}  
                               <select defaultValue="DisabledSelect" className="form-control" onChange={props.handleSoftPointsChange} type="text" id="SoftPoints">
                                 <option value="DisabledSelect" disabled> -- Select an Option -- </option>
-                                {/* <option value="0">0</option> */}
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                                <option value="1">1 = Not Strong at All</option>
+                                <option value="2">2 = Weak</option>
+                                <option value="3">3 = Average</option>
+                                <option value="4">4 = Above Average</option>
+                                <option value="5">5 = Absolute Rockstar</option>
                               </select>
                           </div>
                       </div>
@@ -255,7 +269,7 @@ const Modal = (props) => {
                     <br/>
 
 
-                    <button onClick={props.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
+                    <button onClick={props.handleFormSubmit} onClick={props.handleClose} type="submit" className="btn btn-primary">Submit</button>
                   
                   </form>
 
@@ -263,7 +277,8 @@ const Modal = (props) => {
             </div> */}
           </div>
 
-          <button onClick={props.handleClose}>close</button>
+          <button type="button" onClick={props.handleClose}>close</button>
+          
         </section>
       </div>
     );

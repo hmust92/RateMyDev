@@ -60,15 +60,15 @@ const UserSchema = new mongoose.Schema({
   },
   portfolioURL : {
     type: String,
-    default: "My Portfolio"
+    default: "/"
   },
   linkedInURL: {
     type: String,
-    default: "www.linkedin.com"
+    default: "https://www.linkedin.com/"
   },
   githubURL: {
     type: String,
-    default: "www.github.com"
+    default: "https://github.com/"
   },
   aboutYou: {
     type: String,
