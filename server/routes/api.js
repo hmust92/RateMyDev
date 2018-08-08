@@ -11,11 +11,12 @@ router.get('/me', (req, res) => {
 	res.status(200).json({
 		message: "You're authorized to see this secret message.",
 // user values passed through from auth middleware
-		user: req.user
+user: req.user
 });
 });
 
-router.get('/:userId', (req, res) => {
+
+router.get('/profile/:userId', (req, res) => {
 
 	db.findById(req.params.userId)
 	.then((userInfo) => {
@@ -30,11 +31,37 @@ router.get('/:userId', (req, res) => {
 });
 
 router.get("/users", (req, res) => {
-	db.find({})
-	.then(function(userResponse){
-		res.status(200).json(userResponse)
-	})
+	console.log(req.query)
+	if (!req.query.tags){
+		db.find({})
+		.then(function(userResponse){
+			res.status(200).json(userResponse)
+		})
+	}
+	else if (req.query.tags){
+		const mongoArray = req.query.tags.map((tag) =>{
+			return {"selfSurveys": {$elemMatch: {technicalTag: tag}}}
+		})
+		console.log(JSON.stringify(mongoArray))
+
+		db.find({
+			$and: mongoArray
+		}).then((response) => {
+			console.log(response)
+			res.json(response)
+
+		})
+
+
+	}
 })
+
+// db.getCollection('users').find({
+//     $and: [
+//         { 'selfSurveys': { $elemMatch: { technicalTag: 'java' } } },
+//         { 'selfSurveys': { $elemMatch: { technicalTag: 'javascript' } } },
+//     ]
+// });
 
 router.post("/me/survey", (req, res) => {
 	// console.log('post', req.body);
@@ -136,6 +163,8 @@ router.post("/me/survey", (req, res) => {
 
 
 
+
+
 // db.findByIdAndUpdate(
 // 	req.user._id,
 // 	{$push: {"survey": {tag: req.body.tag, points: req.body.points}}},
@@ -198,7 +227,7 @@ router.post("/me/survey", (req, res) => {
 // 		userInfo.save()
 // 	});
 
-	
+
 // })
 
 

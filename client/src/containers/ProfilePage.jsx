@@ -63,7 +63,7 @@ class ProfilePage extends Component {
   }
 
   loadData = () => {
-    axios.get(`/api/${this.props.match.params.userId}`,
+    axios.get(`/api/profile/${this.props.match.params.userId}`,
     {
       headers: {
         'Authorization': `bearer ${Auth.getToken()}`,

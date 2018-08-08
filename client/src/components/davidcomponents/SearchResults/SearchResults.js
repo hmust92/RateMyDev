@@ -2,13 +2,20 @@ import React from "react";
 import "./SearchResults.css";
 
 const SearchResults = props => (
-  <ul className="list-group search-results">
-    {props.results.map(result => (
-      <li key={result} className="list-group-item">
-        <img alt="Dev" src={result} className="img-fluid" />
-      </li>
-    ))}
-  </ul>
-);
+	<div>
+	{props.tags.map(tag => (
+		<div key={tag}>
+		<p>{tag}</p>
+		</div>
+		))}
+	<button 
+	type="submit"
+	onClick={props.handleSearchUser}
+	className="btn btn-success"
+	>
+	Search
+	</button>
+	</div>
+	);
 
 export default SearchResults;
