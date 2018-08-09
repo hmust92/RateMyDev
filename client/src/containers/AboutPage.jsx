@@ -142,28 +142,7 @@ class AboutPage extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="column">
-              <div className="card aboutCard">
-                <img
-                  src="/images/ec.jpeg"
-                  alt="Elaulas"
-                  style={{ width: "100%" }}
-                />
-                <div className="container aboutContainer">
-                  {" "}
-                  <h2>E. Cristiano</h2>
-                  <p className="title">Subject Matter Expert (SME)</p>
-                  <p className="details">
-                    Brings a thoughtful perspective to the problem at hand.
-                  </p>
-                  <p className="aboutDevLinks">
-                  <a href="mailto:elaulas@gmail.com"><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black" /></a>  
-                  <a target="_blank" rel="noopener noreferrer" href="https://github.com/elaulas" title="check out this developer on GitHub"><i className="fa fa-github fa-fw w3-margin-right w3-large w3-text-black" /></a>
-                  </p>
-                  
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>

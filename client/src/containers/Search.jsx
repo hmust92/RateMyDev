@@ -82,7 +82,7 @@ class Search extends Component {
         handleSearchUser={this.handleSearchUser}
         />}
 
-        <UserResults results={this.state.results} selfSurveys={this.state.results.selfSurveys}/>
+        <UserResults results={this.state.results}/>
 
 
         </Container>
