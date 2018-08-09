@@ -73,7 +73,18 @@ const Modal = (props) => {
                       </div>
                     </div>
 
+
                     <div className="row">
+                      <div className="col-md-5 offset-md-1">
+                          <div className="input-group mb-3">
+                              <div className="input-group-prepend">
+                                  <span className="input-group-text">Location</span>
+                              </div>
+                              <input onChange={props.handleLocationChange} type="text" placeholder="Dallas, TX" className="form-control" id="Location"/>
+                          </div>
+                      </div>
+
+                    {/* <div className="row">
                       <div className="col-md-5 offset-md-1">
                           <div className="input-group mb-3">
                               <div className="input-group-prepend">
@@ -81,7 +92,7 @@ const Modal = (props) => {
                               </div>
                               <input onChange={props.handleZipcodeChange} type="text" placeholder="#####" className="form-control" id="Zipcode"/>
                           </div>
-                      </div>
+                      </div> */}
 
                       <div className="col-md-5">
                           <div className="input-group mb-3">

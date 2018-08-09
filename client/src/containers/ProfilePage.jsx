@@ -27,6 +27,7 @@ class ProfilePage extends Component {
     phoneNumber: null,
     zipcode: null,
     relocation: null,
+    location: null,
     linkedInURL: null,
     githubURL: null,
     aboutYou: null,
@@ -125,6 +126,11 @@ class ProfilePage extends Component {
   handleZipcodeChange = (event) => {
     // event.preventDefault();
     this.setState({ zipcode: event.target.value });
+  }
+
+  handleLocationChange = (event) => {
+    // event.preventDefault();
+    this.setState({ location: event.target.value });
   }
 
   handleRelocationChange = (event) => {
@@ -254,6 +260,7 @@ class ProfilePage extends Component {
       profilePicURL: this.state.profilePicURL,
       phoneNumber: this.state.phoneNumber,
       zipcode: this.state.zipcode,
+      location: this.state.location,
       relocation: this.state.relocation,
       linkedInURL: this.state.linkedInURL,
       githubURL: this.state.githubURL,
@@ -321,6 +328,7 @@ class ProfilePage extends Component {
             handleProfilePicChange={this.handleProfilePicChange}
             handlePhoneChange={this.handlePhoneChange}
             handleZipcodeChange={this.handleZipcodeChange}
+            handleLocationChange={this.handleLocationChange}
             handleRelocationChange={this.handleRelocationChange}
             handleLinkedInChange={this.handleLinkedInChange}
             handleGithubChange={this.handleGithubChange}

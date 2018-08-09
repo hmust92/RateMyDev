@@ -110,7 +110,7 @@ class Main extends Component {
                       <Link className="nav-link" to="/about"><i className="far fa-question-circle"></i> About</Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" to={"/profile/" + this.state.userId}><i className="fas fa-user"></i> Profile</Link>
+                      <Link className="nav-link" to={"/profile/" + this.state.userId}><i className="fas fa-user"></i> My Profile</Link>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" to="/search"><i className="fas fa-users"></i> Search</Link>

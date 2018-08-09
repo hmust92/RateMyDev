@@ -112,6 +112,10 @@ router.post("/me/survey", (req, res) => {
 			userInfo.zipcode = req.body.zipcode;
 		}
 
+		if(req.body.location && req.body.location !== null) {
+			userInfo.location = req.body.location;
+		}
+
 		if(req.body.relocation && req.body.relocation !== null) {
 			userInfo.relocation = req.body.relocation;
 		}
@@ -151,6 +155,10 @@ router.post("/me/survey", (req, res) => {
 		if(req.body.passionQuestion && req.body.passionQuestion !== null) {
 			userInfo.passionQuestion = req.body.passionQuestion;
 		}
+
+		// if(req.body.selfSurveys.technicalTag && req.body.selfSurveys.technicalTag !== "") {
+		// 	userInfo.selfSurveys = userInfo.selfSurveys.concat([req.body])
+		// }
 
 		userInfo.selfSurveys = userInfo.selfSurveys.concat([req.body])
 		userInfo.save()

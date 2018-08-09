@@ -57,6 +57,7 @@ class Search extends Component {
     event.preventDefault();
     this.setState({ tags: [...tags, this.state.search] });
     
+    // Search.render()
   };
 
   handleBtnClick = event => {
@@ -81,7 +82,7 @@ class Search extends Component {
         handleSearchUser={this.handleSearchUser}
         />}
 
-        <UserResults results={this.state.results} />
+        <UserResults results={this.state.results}/>
 
 
         </Container>

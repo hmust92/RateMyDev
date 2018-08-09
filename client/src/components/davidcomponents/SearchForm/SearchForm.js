@@ -5,7 +5,7 @@ import "./SearchForm.css";
 const SearchForm = props => (
   <form className="search">
     <div className="form-group">
-      <label htmlFor="skill">Developer Name or Specific Skill(s):</label>
+      <label htmlFor="skill">Developer Name or Specific Skill:</label>
       <input
         value={props.search}
         onChange={props.handleInputChange}
@@ -20,11 +20,12 @@ const SearchForm = props => (
         {props.stackOverflowSkills.map(stackOverflowSkill => <option value={stackOverflowSkill.name} key={stackOverflowSkill.name} />)}
       </datalist>
       <button
+        id="addSkillButton"
         type="submit"
         onClick={props.handleFormSubmit}
         className="btn btn-success"
       >
-        Add
+        Add Skill
       </button>
     </div>
   </form>
