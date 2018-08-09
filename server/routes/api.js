@@ -7,7 +7,7 @@ const db = require("../models/user.js");
 
 
 router.get('/me', (req, res) => {
-	console.log(req.user._id)
+	// console.log(req.user._id)
 	res.status(200).json({
 		message: "You're authorized to see this secret message.",
 // user values passed through from auth middleware
@@ -31,7 +31,7 @@ router.get('/profile/:userId', (req, res) => {
 });
 
 router.get("/users", (req, res) => {
-	console.log(req.query)
+	
 	if (!req.query.tags){
 		db.find({})
 		.then(function(userResponse){
@@ -42,12 +42,12 @@ router.get("/users", (req, res) => {
 		const mongoArray = req.query.tags.map((tag) =>{
 			return {"selfSurveys": {$elemMatch: {technicalTag: tag}}}
 		})
-		console.log(JSON.stringify(mongoArray))
+		
 
 		db.find({
 			$and: mongoArray
 		}).then((response) => {
-			console.log(response)
+			// console.log(response)
 			res.json(response)
 
 		})
@@ -83,7 +83,7 @@ router.post("/me/survey", (req, res) => {
 		// console.log(req.body.firstName)
 		// console.log("================")
 
-		// console.log(req.user._id)
+		
 		if(req.body.firstName && req.body.firstName !== null) {
 			userInfo.firstName = req.body.firstName;
 		}
@@ -160,75 +160,21 @@ router.post("/me/survey", (req, res) => {
 
 
 
+ router.post("/users/:userId/surveys", (req, res) => {
+ 	console.log(`The user whose page I am on: ${req.params.userId}`)
+ 	console.log(`My ID: ${req.user._id}`)
+ 	console.log(`Post this data: ${JSON.stringify(req.body)}`)
 
+ 	db.findById(req.params.userId)
+    .then((userInfo) => {
+    
+    	userInfo.communitySurveys = userInfo.communitySurveys.concat([{...req.body, userId: req.user._id}])
+    	userInfo.save()
+    	console.log("Testing Community Survey")
+    	res.json(userInfo.communitySurveys)
+    })
+ })
 
-
-
-
-// db.findByIdAndUpdate(
-// 	req.user._id,
-// 	{$push: {"survey": {tag: req.body.tag, points: req.body.points}}},
-// 	{safe: true, upsert: true},
-// 	function(err, model){
-// 		console.log(err);
-// 	}
-
-// )
-// db
-
-
-
-// .findById({ _id: req.user._id })
-// .then(user => {
-
-// 	console.log(req.body)
-
-// 	user.selfSurvey = [];
-// 	req.body.data.forEach(survey => {
-// 		user.selfSurvey.push({
-// 			...survey,
-// 			userId: req.user._id
-// 		});
-// 	})
-
-// 	user.save();
-// 	return user; 
-// })
-// .then((user) => {
-// 	res.json(user)
-
-// })
-
-
-// router.post("/users/:userId/surveys", (req, res) => {
-// 	console.log('post', req.body);
-
-// 	// db.findById(req.user._id, (err, user) => {
-
-// 	// 	console.log(user)
-// 	// 	console.log(req.body)
-
-
-// 	// 	user.selfSurveys = user.selfSurveys.concat([req.body])
-// 	// 	user.save()
-// 	// });
-
-// 	db.findById(req.params.userId)
-// 	.then((userInfo) => {
-// 		console.log(userInfo)
-// 		console.log(req.body)
-// 		console.log(req.user._id)
-
-
-// 		userInfo.communitySurveys = userInfo.communitySurveys.concat([{
-// 			...req.body,
-// 			userId: req.user._id 
-// 		}])
-// 		userInfo.save()
-// 	});
-
-
-// })
 
 
 

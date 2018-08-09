@@ -347,7 +347,7 @@ class ProfilePage extends Component {
 
           </Modal> 
 
-          <button type="button" onClick={this.showModal}>Rate Myself</button>
+          {this.props.match.params.userId===Auth.getUserId() && <button type="button" onClick={this.showModal}>Rate Myself</button>}
       
         </main>
 
