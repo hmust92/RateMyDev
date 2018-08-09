@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Modal = (props) => {
     const showHideClassName = props.show ? "modal display-block" : "modal display-none";
 
@@ -279,16 +280,21 @@ const Modal = (props) => {
 
                     <br/>
 
-
-                    <button onClick={props.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
+                    <div className="row modalButtons">
+                      <div className="col-md-2 offset-md-4">
+                        <button onClick={props.handleFormSubmit} type="submit" className="btn btn-success" id="modalButton">Submit</button>
+                      </div>
                   
+                      <div className="col-md-2">
+                        <button className="btn btn-primary" id="modalButton" type="button" onClick={props.handleClose}>Close</button>
+
+                      </div>
+                    </div>
+
+
                   </form>
 
-              {/* </div>
-            </div> */}
           </div>
-
-          <button type="button" onClick={props.handleClose}>close</button>
           
         </section>
       </div>

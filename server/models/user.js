@@ -72,31 +72,31 @@ const UserSchema = new mongoose.Schema({
   },
   aboutYou: {
     type: String,
-    default: "Default - Hi, I'm a developer and I love technology!"
+    default: "This information has not been updated yet."
   },
   impossibleQuestion: {
     type: String,
-    default: "Default - I love documentation! I'd dive right in...as long as it takes."
+    default: "This question has not been answered."
   },
   deadlineQuestion: {
     type: String,
-    default: "Default - Accept what you cannot control. That's my mantra."
+    default: "This question has not been answered."
   },
   teamQuestion: {
     type: String,
-    default: "Default - I love teams! I grew up in a big family!"
+    default: "This question has not been answered"
   },
   personalityQuestion: {
     type: String,
-    default: "Default - I wish I were more outgoing..."
+    default: "This question has not been answered."
   },
   dissatisfactionQuestion: {
     type: String,
-    default: "Default - I am a perfectionist. My manager is always happy - seriously."
+    default: "This question has not been answered."
   },
   passionQuestion: {
     type: String,
-    default: "Default - I love to code, it's all I ever do."
+    default: "This question has not been answered."
   },
   averageRating: {
       tag: {type: String}, //new object pushed with recalculated values 

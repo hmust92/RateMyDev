@@ -57,3 +57,17 @@ div.w3-container.w3-card.w3-white {
     padding: 10px;
     /* text-align: center */
 }
+
+#modalButton {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+
+}
+
+.modalButtons {
+    margin-bottom: 40px;
+    text-align: center;
+}

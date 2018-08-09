@@ -355,7 +355,7 @@ class ProfilePage extends Component {
 
           </Modal> 
 
-          {this.props.match.params.userId===Auth.getUserId() && <button type="button" onClick={this.showModal}>Rate Myself</button>}
+          {/* {this.props.match.params.userId===Auth.getUserId() && <button type="button" onClick={this.showModal}>Create/Update Profile</button>} */}
       
         </main>
 
@@ -418,6 +418,9 @@ class ProfilePage extends Component {
                   {this.state.user && <Personality devContactInfo={this.state.user}/>}
                 </div>
                 {/* End Right Column */}
+                <div className="profileButtonContainer">
+                  {this.props.match.params.userId===Auth.getUserId() && <button className="profileButton" type="button" onClick={this.showModal}>Create/Update Profile</button>}
+                </div>
               </div>
               {/* End Grid */}
 
