@@ -15,7 +15,7 @@ hasan mustafa :: https://github.com/hmust92 - full-stack developer
 
 sherry yang :: https://github.com/xxsherryyy - front-end developer
 
-elaulas cristiano :: https://github.com/elaulas - subject matter expert
+
 
 special thanks to @spacesuitdiver
 
