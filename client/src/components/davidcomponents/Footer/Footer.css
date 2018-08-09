@@ -3,7 +3,8 @@
   background: #E5E5E5;
   position: relative;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 400px;
+  /* background-image: linear-gradient(bottom right, #05368b, #2c3539); */
 }
 
 .footer span {
@@ -14,3 +15,25 @@
   padding: 3px;
   background: #B8B8B8;
 }
+/* 
+.push{
+  height: 50px
+}
+
+
+.footer {
+  min-height: 100px;
+  background: #E5E5E5;
+  position: relative;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.footer span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3px;
+  background: #B8B8B8;
+} */
