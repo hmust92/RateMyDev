@@ -41,7 +41,7 @@ class Auth {
   static getUserId() {
 
     const myDecodedToken = jwt.decode(Auth.getToken()) || {};
-      console.log(myDecodedToken)
+      // console.log(myDecodedToken)
 
       return myDecodedToken.sub;
     }
