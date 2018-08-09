@@ -5,7 +5,7 @@ import "./SearchForm.css";
 const SearchForm = props => (
   <form className="search">
     <div className="form-group">
-      <label htmlFor="skill">Developer Name or Specific Skill(s):</label>
+      <label htmlFor="skill">Developer Name or Specific Skill:</label>
       <input
         value={props.search}
         onChange={props.handleInputChange}

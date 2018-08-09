@@ -50,3 +50,7 @@ nav#navbar {
 element.style {
   text-align: center;
 }
+
+i {
+  color: #3f51b5;
+}
