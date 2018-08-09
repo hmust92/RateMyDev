@@ -11,6 +11,7 @@ import Personality from '../components/ProfilePageComponents/Personality.jsx';
 import TechnicalSkills from '../components/TechnicalSkills.jsx';
 import SoftSkills from '../components/SoftSkills.jsx';
 import Modal from '../components/Modal.jsx';
+import ModalCommunity from '../components/ModalCommunity.jsx';
 import '../css/Main.css';
 import "../css/ProfilePage.css";
 
@@ -38,6 +39,7 @@ class ProfilePage extends Component {
     softPoints: "",
     softSkillType: "",
     show: false,
+    showCommunity: false,
 
     search: "",
     stackOverflowSkills: [],
@@ -56,8 +58,16 @@ class ProfilePage extends Component {
     this.setState({ show: true });
   };
 
+  showCommunityModal = () => {
+    this.setState({ showCommunity: true });
+  };
+
   hideModal = () => {
     this.setState({ show: false });
+  };
+
+  hideModalCommunity = () => {
+    this.setState({ showCommunity: false });
   };
 
   /**
@@ -221,30 +231,34 @@ class ProfilePage extends Component {
   }
 
  
+  handleCommunitySubmit = (event) => {
+    event.preventDefault();
+    const communityData = {
+      technicalTag: this.state.technicalTag,
+      technicalPoints: this.state.technicalPoints
+    }
 
+      let axiosConfigCommunity = {
+      headers: {
+        'Authorization': `bearer ${Auth.getToken()}`,
+        'Content-type': 'application/json',
+      }
+    };
+
+    // console.log({userData)
+    axios.post(`/api/users/${this.props.match.params.userId}/surveys`, communityData, axiosConfigCommunity)
+      .then((res) => {
+        this.loadData()
+      })
+      .catch((err) => {
+        console.log("AXIOS ERROR: ", err);
+      })
+
+    this.hideModal()
+  }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-
-    // const tagYo = this.state.tag;
-    // const pointsYo = this.state.points;
-    // const skillTypeYo = this.state.skillType;
-    // const firstNameYo = this.state.firstName; 
-    
-
-
-    // if(this.state.firstName) {
-    //   firstNameYo = this.state.firstName;
-    // }
-    // const userData = `tag=${tagYo}&points=${pointsYo}`;
-
-    // const userData = {
-    //   tag: tagYo,
-    //   points: pointsYo,
-    //   skillType: skillTypeYo,
-    //   firstName: firstNameYo
-
-    // }
 
     const userData = {
       technicalTag: this.state.technicalTag,
@@ -294,14 +308,6 @@ class ProfilePage extends Component {
         console.log("AXIOS ERROR: ", err);
       })
 
-    // API.getUserInfo(this.state.search)
-    //   .then(res => {
-    //     if (res.data.status === "error") {
-    //       throw new Error(res.data.message);
-    //     }
-    //     this.setState({ results: res.data.message, error: "" });
-    //   })
-    //   .catch(err => this.setState({ error: err.message }));
     this.hideModal()
   };
 
@@ -421,6 +427,24 @@ class ProfilePage extends Component {
                 <div className="profileButtonContainer">
                   {this.props.match.params.userId===Auth.getUserId() && <button className="profileButton" type="button" onClick={this.showModal}>Create/Update Profile</button>}
                 </div>
+                <div className="communityButtonContainer">
+                  {this.props.match.params.userId!==Auth.getUserId() && <button className="communityButton" type="button" onClick={this.showCommunityModal}>Community button</button>}
+                </div>
+
+            <ModalCommunity 
+                showCommunity={this.state.showCommunity} 
+                handleClose={this.hideModalCommunity}
+
+                handleTechnicalSkillChange={this.handleTechnicalSkillChange}
+                handleTechnicalPointsChange={this.handleTechnicalPointsChange}
+
+                handleInputChange={this.handleInputChange}
+                stackOverflowSkills={this.state.stackOverflowSkills}
+
+
+                handleCommunitySubmit={this.handleCommunitySubmit}>
+          </ModalCommunity>
+
               </div>
               {/* End Grid */}
 
