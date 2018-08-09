@@ -1,0 +1,48 @@
+/* .smallSearchPic {
+    margin: 10px;
+} */
+
+/* .searchPicContainer {
+    min-width: 120px;
+    min-height: 120px;
+    margin: 10px;
+
+} */
+
+.devSearchProfile {
+    margin-bottom: 20px;
+    border: 2px solid rgba(0,0,0,0.75);
+    background-color: #E5E5E5;
+}
+
+#userLinks {
+    /* text-decoration: none; */
+    color: black;
+}
+
+i.userResultsLogos {
+    color: #3f51b5;
+    /* color: blue */
+}
+
+/* i {
+    color: #3f51b5;
+} */
+/* 
+a:visited { 
+    text-decoration: none; 
+    color:black; 
+} */
+
+
+/* a.navlink:hover {
+    color: blue;
+} */
+
+span {
+    display: inline-block;
+}
+
+.skillTagP {
+    margin-left: 8px;
+}

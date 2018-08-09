@@ -20,11 +20,12 @@ const SearchForm = props => (
         {props.stackOverflowSkills.map(stackOverflowSkill => <option value={stackOverflowSkill.name} key={stackOverflowSkill.name} />)}
       </datalist>
       <button
+        id="addSkillButton"
         type="submit"
         onClick={props.handleFormSubmit}
         className="btn btn-success"
       >
-        Add
+        Add Skill
       </button>
     </div>
   </form>
