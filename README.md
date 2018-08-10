@@ -10,13 +10,13 @@ RATE THAT DEV is a Full Stack app using REACT that scores Developers on Technica
 
 # TEAM
 
-david daniels :: https://github.com/dvdkrstndnls/ -  UX, front-end, concept
+david daniels :: https://github.com/dvdkrstndnls/ -  UX/UI, front-end, concept
 
-paul rose :: https://github.com/prose34 - full stack developer, architecture
+paul rose :: https://github.com/prose34 - full stack developer, architecture, UI
 
-hasan mustafa :: https://github.com/hmust92 - full-stack developer
+hasan mustafa :: https://github.com/hmust92 - back-end developer
 
-sherry yang :: https://github.com/xxsherryyy - front-end developer
+sherry yang :: https://github.com/xxsherryyy - front-end developer, UI
 
 
 
