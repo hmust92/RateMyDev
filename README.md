@@ -4,16 +4,19 @@ The tools used to create and run the modern web change at incredible speed. HR m
 
 RATE THAT DEV is a Full Stack app using REACT that scores Developers on Technical skills (using defined criteria of skill compentency) as well as Soft Skills (that reflect the Dev's ability to work with others). Recruiters, CTOs, Hiring managers or startups can contact developers with the closest match to their specific requirements and work culture needs. Comprehensive Developer Profiles allow decision makers to have a much clearer idea of who a developer is before reaching out for an interview. Ratings that reflect the developer's own estimation of their skill as well as anonymous peer reviews of the developer skills ensure that the developer profiles are accurate.
 
+## VISUAL OVERVIEW
+[![RateThatDev](https://github.com/hmust92/ratethatdev/blob/master/README/RateThatDevGitHubReadme.gif)](https://github.com/hmust92/ratethatdev/blob/master/README/RateThatDevGitHubReadme.gif)
+
 
 # TEAM
 
-david daniels :: https://github.com/dvdkrstndnls/ -  UX, front-end, concept
+david daniels :: https://github.com/dvdkrstndnls/ -  UX/UI, front-end, concept
 
-paul rose :: https://github.com/prose34 - full stack developer, architecture
+paul rose :: https://github.com/prose34 - full stack developer, architecture, UI
 
-hasan mustafa :: https://github.com/hmust92 - full-stack developer
+hasan mustafa :: https://github.com/hmust92 - back-end developer
 
-sherry yang :: https://github.com/xxsherryyy - front-end developer
+sherry yang :: https://github.com/xxsherryyy - front-end developer, UI
 
 
 
