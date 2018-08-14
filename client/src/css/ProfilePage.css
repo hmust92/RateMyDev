@@ -29,10 +29,16 @@ p.w3-large {
     margin-bottom: 0px;
 }
 
+div.w3-light-grey {
+    /* height: 35px; */
+}
+
+/* keep words right on top of scores */
 div.w3-container.w3-center.w3-round-xlarge.w3-indigo {
     margin-top: 0px;
 }
 
+/* aligns top of about with top of profile pic */
 div.w3-container.w3-card.w3-white.w3-margin-bottom {
     margin-top: 0px;
 }
@@ -41,6 +47,7 @@ div.w3-container.w3-card.w3-white {
     margin-bottom: 20px;
 }
 
+/* keeps next skill form getting to close to previous */
 .skillTagDiv {
     margin-bottom: 20px;
 }
