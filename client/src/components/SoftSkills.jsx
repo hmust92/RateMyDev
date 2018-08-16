@@ -26,10 +26,10 @@ const SoftSkills = props => (
                         <div className="skillTagDiv" key={skill._id}>
                             <p className="skillTagP">{skill.softTag}</p>
                             <div className="w3-light-grey w3-round-xlarge w3-small">
-                                <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: `${convertToPercent(skill.technicalPoints)}%`}}>{skill.technicalPoints}</div>
+                                <div className="w3-container w3-center w3-round-xlarge w3-indigo" style={{width: `${convertToPercent(skill.softPoints)}%`}}>{skill.softPoints}</div>
                             </div>
                                 <div className="w3-light-grey w3-round-xlarge w3-small">
-                                <div className="w3-container w3-center w3-round-xlarge w3-red" style={{width: `${convertToPercent(skill.technicalPoints)}%`}}>{skill.technicalPoints}</div>
+                                <div className="w3-container w3-center w3-round-xlarge w3-red" style={{width: `${convertToPercent(skill.softPoints)}%`}}>{skill.softPoints}</div>
                             </div>
                         </div>
                     ))}        

@@ -98,12 +98,13 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: "This question has not been answered."
   },
-  averageRating: {
-      tag: {type: String}, //new object pushed with recalculated values 
-      points: {type: Number} //Decimal??
-  },
+  averageRating: [{
+    technicalTag: {type: String}, 
+    technicalPoints: {type: Number},
+    numOfVotes: {type: Number},
+  }],
   communitySurveys: [surveySchema],
-  });
+});
 
 /**
  * Compare the passed password with the value in the database. A model method.

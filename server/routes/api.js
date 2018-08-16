@@ -180,6 +180,61 @@ router.post("/me/survey", (req, res) => {
     	userInfo.save()
     	console.log("Testing Community Survey")
     	res.json(userInfo.communitySurveys)
+    	return userInfo
+    })
+    .then((userInfo) => {
+
+    	const filteredArray = userInfo.communitySurveys.filter(filteredObject => {
+    		return filteredObject.technicalTag === req.body.technicalTag
+    	})
+
+    	// console.log(filteredArray)
+
+    	return {userInfo, filteredArray}
+
+    })
+    .then((object) => {
+
+    	// console.log(object.userInfo)
+    	
+    	const sum = object.filteredArray.reduce((sum, oneIndex) => sum + oneIndex.technicalPoints, 0);
+    	const average = sum / object.filteredArray.length;
+
+    	// console.log("\n\n" + average)
+
+    	if (object.userInfo.averageRating.some(e => e.technicalTag === req.body.technicalTag)) {
+
+    		object.userInfo.averageRating.forEach((element) => {
+    			if (element.technicalTag === req.body.technicalTag) {
+    			// var newObject = {
+    			// 	id: element._id,
+    			// 	technicalPoints: average,
+    			// 	technicalTag: element.technicalTag
+    			// }
+    			// element = {...element, ...newObject}
+    			element.technicalPoints = average;
+    			element.numOfVotes = object.filteredArray.length
+    			
+    		}
+    		
+
+    	})
+
+    	}
+
+    	else {
+
+    		object.userInfo.averageRating = object.userInfo.averageRating.concat([{
+    		technicalTag: req.body.technicalTag,
+    		technicalPoints: average,
+    		numOfVotes: object.filteredArray.length}])
+
+    	}
+    	
+
+    	console.log(object.userInfo.averageRating)
+
+
     })
  })
 
