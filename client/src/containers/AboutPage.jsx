@@ -54,7 +54,7 @@ class AboutPage extends React.Component {
           <div className="row">
             <div className="column">
               <div className="card aboutCard">
-                <img src="/images/dkd.jpeg"
+                <img src="https://avatars3.githubusercontent.com/u/35070929?s=400%26u=cc721c00d94f16f3bead7e00b49abccc987b81e3%26v=4"
                   alt="David"
                   style={{ width: "100%" }}
                 />
@@ -63,7 +63,7 @@ class AboutPage extends React.Component {
                   <p className="title">UX Developer</p>
                   <p className="details">
                     Thinks job searching is inefficient. Has some ideas. Feels
-                    strongly about them. Likes to work.
+                    strongly about them. Sees the big picture and likes to work.
                   </p>
                   <p className="aboutDevLinks">
                     
@@ -77,7 +77,7 @@ class AboutPage extends React.Component {
             <div className="column">
               <div className="card aboutCard">
                 <img
-                  src="/images/paulrose2.jpeg"
+                  src="images/paulrose2.jpeg"
                   alt="Paul"
                   style={{ width: "100%" }}
                 />
@@ -86,7 +86,7 @@ class AboutPage extends React.Component {
                   <h2>Paul Rose</h2>
                   <p className="title">Full Stack Developer</p>
                   <p className="details">
-                    Thinks deeply about how technology connects. Building things
+                    Thinks deeply about how the technology connects. Building and refining things
                     all the time.
                   </p>
                   <p className="aboutDevLinks">
@@ -100,14 +100,14 @@ class AboutPage extends React.Component {
             <div className="column">
               <div className="card aboutCard">
                 <img
-                  src="/images/hasanmustafa.jpeg"
+                  src="images/hasanmustafa.jpeg"
                   alt="Hasan"
                   style={{ width: "100%" }}
                 />
                 <div className="container aboutContainer">
                   {" "}
                   <h2>Hasan Mustafa</h2>
-                  <p className="title">Full Stack Developer</p>
+                  <p className="title">Back End Developer</p>
                   <p className="details">
                     Deep into the documentation, finding the necessary tools.
                   </p>
@@ -122,7 +122,7 @@ class AboutPage extends React.Component {
             <div className="column">
               <div className="card aboutCard">
                 <img
-                  src="/images/sherryyang.jpeg"
+                  src="images/sherryyang.jpeg"
                   alt="Sherry"
                   style={{ width: "100%" }}
                 />
