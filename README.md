@@ -54,12 +54,12 @@ cd ..
 npm run start:dev
 ```
 
-##Demo Day Slide Deck
+## Demo Day Slide Deck
 https://docs.google.com/presentation/d/16DpMm0F2r1e9zeb7bpkPtoatQkR7pW3gqDFWisIcy80/edit?usp=sharing
 
 
 
-## Wireframing and Prototype
+## Wireframes and Prototype
 https://drive.google.com/file/d/1shM1vehmNAU8mPUBgC4tj4Qj6_Mjmy0N/view?usp=sharing
 
 
