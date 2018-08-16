@@ -59,11 +59,8 @@ https://docs.google.com/presentation/d/16DpMm0F2r1e9zeb7bpkPtoatQkR7pW3gqDFWisIc
 
 
 
-![alt text](https://github.com/xxsherryyy/RateMyDev/blob/master/image.png)
-
-![alt text](https://github.com/xxsherryyy/RateMyDev/blob/master/IMG_20180714_173901.jpg)
-
-![alt text](https://github.com/xxsherryyy/RateMyDev/blob/master/IMG_20180714_173912.jpg)
+## Wireframing and Prototype
+https://drive.google.com/file/d/1shM1vehmNAU8mPUBgC4tj4Qj6_Mjmy0N/view?usp=sharing
 
 
 
