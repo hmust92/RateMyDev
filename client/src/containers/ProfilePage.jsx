@@ -35,6 +35,8 @@ class ProfilePage extends Component {
     technicalTag: "",
     technicalPoints: "",
     techSkillType: "",
+    averageRating: "",
+    numberOfVotes: "",
     // technicalCommunityTag: "",
     // technicalCommunityPoints: "",
     // techSkillcommunityType: "",
@@ -187,6 +189,22 @@ class ProfilePage extends Component {
     }
   }
 
+   handleAverageRatingsChange = (event) => {
+    // event.preventDefault();
+    if(event.target.value) {
+      this.setState({ averageRating: event.target.value });
+    }
+  }
+
+  handleNumberOfVotesChange = (event) => {
+    // event.preventDefault();
+    if(event.target.value) {
+      this.setState({ numberOfVotes: event.target.value });
+    }
+  }
+
+
+
 
 
   handleSoftSkillChange = (event) => {
@@ -255,12 +273,19 @@ class ProfilePage extends Component {
     axios.post(`/api/users/${this.props.match.params.userId}/surveys`, communityData, axiosConfigCommunity)
       .then((res) => {
         this.loadData()
+        if (res.data === "Cannot add record") {
+          alert("You cannot add a skill the user does not have in his self survey and you must select a rating. Please try again.")
+        }
+
+
       })
       .catch((err) => {
         console.log("AXIOS ERROR: ", err);
       })
 
-    this.hideModal()
+      this.hideModalCommunity()
+
+    
   }
 
   handleFormSubmit = (event) => {
@@ -443,6 +468,9 @@ class ProfilePage extends Component {
 
                 handleTechnicalSkillChange={this.handleTechnicalSkillChange}
                 handleTechnicalPointsChange={this.handleTechnicalPointsChange}
+
+                handleAverageRatingsChange={this.handleAverageRatingsChange}
+                handleNumberOfVotesChange={this.handleNumberOfVotesChange}
 
                 handleInputChange={this.handleInputChange}
                 stackOverflowSkills={this.state.stackOverflowSkills}

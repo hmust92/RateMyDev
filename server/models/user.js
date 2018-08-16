@@ -13,6 +13,8 @@ var surveySchema = new Schema({
   technicalTag: {type: String}, 
   technicalPoints: {type: Number},
   techSkillType: {type: String},
+  averageRating: {type: Number},
+  numberOfVotes: {type: Number},
 
   softTag: {type: String}, 
   softPoints: {type: Number},

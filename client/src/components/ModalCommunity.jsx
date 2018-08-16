@@ -44,7 +44,7 @@ const ModalCommunity = (props) => {
                               <div className="input-group-prepend">
                                   <span className="input-group-text">Points</span>
                               </div>
-                              <select defaultValue="DisabledSelect" className="form-control" onChange={props.handleTechnicalPointsChange} type="text" id="Points">
+                              <select defaultValue="DisabledSelect" className="form-control" onChange={props.handleTechnicalPointsChange}  type="text" id="Points">
                                 <option value="DisabledSelect" disabled> -- Select an Option -- </option>
                                 {/* <option value="0">0 = (Default) Declined to Answer / Don’t Use at All</option> */}
                                 <option value="1">1 = Exposure to this Technology</option>

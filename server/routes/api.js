@@ -176,11 +176,18 @@ router.post("/me/survey", (req, res) => {
  	db.findById(req.params.userId)
     .then((userInfo) => {
     
+    	if (userInfo.selfSurveys.some(e => e.technicalTag === req.body.technicalTag && req.body.technicalPoints !== "")) {
     	userInfo.communitySurveys = userInfo.communitySurveys.concat([{...req.body, userId: req.user._id}])
     	userInfo.save()
-    	console.log("Testing Community Survey")
-    	res.json(userInfo.communitySurveys)
+    	console.log("Record added")
+    	}
+    	else {
+    	console.log("Cannot add record")
+    	res.json("Cannot add record")
+    	}
+    	// res.json(userInfo.communitySurveys)
     	return userInfo
+
     })
     .then((userInfo) => {
 
@@ -202,18 +209,19 @@ router.post("/me/survey", (req, res) => {
 
     	// console.log("\n\n" + average)
 
-    	if (object.userInfo.averageRating.some(e => e.technicalTag === req.body.technicalTag)) {
+    	if (object.userInfo.selfSurveys.some(e => e.technicalTag === req.body.technicalTag)) {
 
-    		object.userInfo.averageRating.forEach((element) => {
-    			if (element.technicalTag === req.body.technicalTag) {
+    		object.userInfo.selfSurveys.forEach((element) => {
+    			if (element.technicalTag === req.body.technicalTag && req.body.technicalPoints !== "") {
     			// var newObject = {
     			// 	id: element._id,
     			// 	technicalPoints: average,
     			// 	technicalTag: element.technicalTag
     			// }
     			// element = {...element, ...newObject}
-    			element.technicalPoints = average;
-    			element.numOfVotes = object.filteredArray.length
+    			element.averageRating = average;
+    			element.numberOfVotes = object.filteredArray.length
+    			console.log("record changed")
     			
     		}
     		
@@ -224,15 +232,13 @@ router.post("/me/survey", (req, res) => {
 
     	else {
 
-    		object.userInfo.averageRating = object.userInfo.averageRating.concat([{
-    		technicalTag: req.body.technicalTag,
-    		technicalPoints: average,
-    		numOfVotes: object.filteredArray.length}])
+    		console.log("It doesn't exist in the records")
+    		
 
     	}
     	
 
-    	console.log(object.userInfo.averageRating)
+    	console.log("Check MongoDB database")
 
 
     })
