@@ -54,16 +54,13 @@ cd ..
 npm run start:dev
 ```
 
-##Demo Day Slide Deck
+## Demo Day Slide Deck
 https://docs.google.com/presentation/d/16DpMm0F2r1e9zeb7bpkPtoatQkR7pW3gqDFWisIcy80/edit?usp=sharing
 
 
 
-![alt text](https://github.com/xxsherryyy/RateMyDev/blob/master/image.png)
-
-![alt text](https://github.com/xxsherryyy/RateMyDev/blob/master/IMG_20180714_173901.jpg)
-
-![alt text](https://github.com/xxsherryyy/RateMyDev/blob/master/IMG_20180714_173912.jpg)
+## Wireframes and Prototype
+https://drive.google.com/file/d/1shM1vehmNAU8mPUBgC4tj4Qj6_Mjmy0N/view?usp=sharing
 
 
 
