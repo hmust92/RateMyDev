@@ -81,6 +81,10 @@ class ProfilePage extends Component {
   /**
    * This method will be executed after initial rendering.
    */
+
+   componentDidUpdate() {
+    this.loadData();
+   }
    componentDidMount() {
     console.log(this.props);
     this.loadData();
